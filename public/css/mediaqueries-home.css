@@ -1,0 +1,351 @@
+@media (max-width:1401px) {
+  .nav-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1401px) {
+
+  .locations-container,
+  .aboutus-container {
+    max-width: 1344px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 1320px;
+    /* Adjust this as needed */
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 1290px;
+  }
+
+  .footer-upper-container {
+    max-width: 1320px;
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+  .locations-container,
+  .aboutus-container {
+    max-width: 1164px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 1140px;
+  }
+
+  .property-facilities-container {
+    max-width: 1180px;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 1110px;
+  }
+
+
+  .footer-upper-container {
+    max-width: 1140px;
+  }
+
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+
+  .locations-container,
+  .aboutus-container {
+    max-width: 984px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 960px;
+  }
+
+  .property-facilities-container {
+    max-width: 950px;
+  }
+
+  .facilities-item {
+    width: 20%;
+  }
+
+  .cities-container {
+    padding: 10px;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 930px;
+  }
+
+  .footer-upper-container {
+    max-width: 960px;
+  }
+
+  .company {
+    padding-right: 0px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .aboutus-container {
+    max-width: 744px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 720px;
+  }
+
+  .city {
+    max-width: 45%;
+  }
+
+  .c2 {
+    flex: 0 0 calc(50%) !important;
+  }
+
+  .property-facilities-container {
+    max-width: 710px;
+  }
+
+  .facilities-item {
+    width: 20%;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 690px;
+  }
+
+  .aboutus-item {
+    max-width: 50%;
+
+  }
+
+  .footer-upper-container {
+    max-width: 720px;
+  }
+
+  .company {
+    padding-right: 0px !important;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+      display: none;
+  }
+
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .locations-container,
+  .aboutus-container {
+    max-width: 600px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 540px;
+  }
+
+  .city {
+    max-width: 45%;
+  }
+
+  .c2 {
+    flex: 0 0 calc(100%) !important;
+  }
+
+  .property-facilities-container {
+    max-width: 530px;
+  }
+
+  .facilities-item {
+    width: 25%;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 510px;
+  }
+
+  .aboutus-item {
+    max-width: 50%;
+
+  }
+}
+
+@media (min-width: 768px) {
+  .small-screen-only {
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+  #first {
+    height: 60vh;
+  }
+
+  .logo-name {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 12px 16px;
+  }
+
+  .big-screen-only {
+    display: none;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+}
+
+
+@media (max-width: 576px) {
+  /* #desktop-nav {
+    position: static;
+  } */
+
+  .aboutus-container,
+  .cities-head {
+    max-width: 300px;
+  }
+
+  .city-image-container {
+    height: 280px;
+
+  }
+
+  .section-text-conatiner h1 {
+    font-size: 38px;
+  }
+
+  .section-text-conatiner h2 {
+    font-size: 20px;
+  }
+
+  .cities-head h1 {
+    font-size: 28px;
+  }
+
+  .search-button {
+    display: none;
+  }
+
+  .search-wrapper {
+    width: 90%;
+
+  }
+
+  .search-results {
+    width: 100%;
+    /* Match dropdown width with search bar */
+  }
+
+  .search-input-wrapper {
+    padding: 10px;
+    /* Adjust padding for smaller screens */
+  }
+
+  .search-item {
+    padding: 15px 20px;
+  }
+
+  .city-title {
+    font-size: 45px !important;
+  }
+
+  .image-head-container {
+    max-width: 320px;
+  }
+
+  .icons-items h3 {
+    font-size: 24px;
+  }
+
+  .city {
+    max-width: 40%;
+  }
+
+  #countries-container {
+    flex-wrap: wrap;
+  }
+
+  .country-head {
+    width: 120px;
+  }
+
+  .section-text-conatiner,
+  .second-container {
+    max-width: 450px;
+  }
+
+  .second-container {
+    /* margin-left: 0;
+        margin-right: 0; */
+    height: auto;
+    max-height: 100vh;
+
+  }
+
+  .aboutus-item {
+    max-width: 100%;
+
+  }
+
+  .aboutus-item p {
+    margin: 0;
+  }
+
+  .icons-items {
+    padding: 0;
+  }
+
+  .c2 {
+    flex: 0 0 calc(100%) !important;
+  }
+
+  .facilities-item {
+    width: 25%;
+  }
+
+  .contact-us-container,
+  .city-info-container {
+    max-width: 420px;
+  }
+
+  .footer-upper-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .company {
+    flex-grow: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
