@@ -60,31 +60,31 @@
               </svg>
             </a>
             <div class="dropdown-options">
-              <a class="dropdownitems-link" href="{{ route('city', 'london') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'london') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="UK logo" />
                 <span>London</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'birmingham') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'birmingham') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="UK logo" />
                 <span>Birmingham</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'manchester') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'manchester') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="UK logo" />
                 <span>Manchester</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'leeds') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'leeds') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="UK logo" />
                 <span>Leeds</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'brighton') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'brighton') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="UK logo" />
                 <span>Brighton</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'edinburgh') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'edinburgh') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_uk.svg" alt="Ireland logo" />
                 <span>Edinburgh</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city', 'dublin') }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', 'dublin') }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_ireland.svg" alt="Ireland logo" />
                 <span>Dublin</span>
               </a>

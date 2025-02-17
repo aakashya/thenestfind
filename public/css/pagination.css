@@ -1,0 +1,207 @@
+@font-face {
+  font-family: 'Icons';
+  src: url('../assets/Icons/fonts/icons.eot');
+  src: url('../assets/Icons/fonts/icons.eot?#iefix') format('embedded-opentype'),
+    url('../assets/Icons/fonts/icons.woff2') format('woff2'),
+    url('../assets/Icons/fonts/icons.woff') format('woff'),
+    url('../assets/Icons/fonts/icons.ttf') format('truetype'),
+    url('../assets/Icons/fonts/icons.svg#icons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.pagination {
+  margin-top: 20px;
+}
+
+/* ======================================================
+   Semantic UI Pagination & Menu - Cleaned CSS
+   ====================================================== */
+
+/* --- Scoped Box-Sizing for Pagination --- */
+/* This applies only to elements within .ui.pagination.menu */
+.ui.pagination.menu,
+.ui.pagination.menu *:before,
+.ui.pagination.menu *:after,
+.ui.pagination.menu * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* --- Pagination Container --- */
+.ui.pagination.menu {
+  margin: 0;
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+/* --- General Menu Styles --- */
+.ui.menu {
+  font-size: 14px;
+  display: flex;
+  margin: 1rem 0;
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  background: #fff;
+  font-weight: 400;
+  border: 1px solid rgba(34, 36, 38, 0.15);
+  box-shadow: 0 1px 2px 0 rgba(34, 36, 38, 0.15);
+  border-radius: 0.28571429rem;
+  min-height: 2.85714286em;
+}
+
+.ui.menu:first-child {
+  margin-top: 0;
+}
+
+.ui.menu:last-child {
+  margin-bottom: 0;
+}
+
+.ui.menu:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+
+/* --- Menu Item Styles --- */
+.ui.menu>.item:first-child {
+  border-radius: 0.28571429rem 0 0 0.28571429rem;
+}
+
+.ui.menu:not(.vertical) .item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ui.menu .item {
+  position: relative;
+  vertical-align: middle;
+  line-height: 1;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  flex: 0 0 auto;
+  user-select: none;
+  background: none;
+  padding: 0.92857143em 1.14285714em;
+  color: rgba(0, 0, 0, 0.87);
+  font-weight: 400;
+  transition: background 0.1s ease, color 0.1s ease, box-shadow 0.1s ease;
+  min-width: 3em;
+  text-align: center;
+}
+
+/* --- Separator (Vertical Line) --- */
+.ui.menu .item:before {
+  position: absolute;
+  content: '';
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 1px;
+  background: rgba(34, 36, 38, 0.1);
+}
+
+/* --- Active Menu Item --- */
+.ui.menu .active.item,
+.ui.pagination.menu .active.item {
+  background: rgba(0, 0, 0, 0.05);
+  color: rgba(0, 0, 0, 0.95);
+  box-shadow: none;
+}
+
+/* --- Disabled Menu Item --- */
+.ui.menu .item.disabled,
+.ui.menu .item.disabled:hover {
+  cursor: default !important;
+  background-color: transparent !important;
+  color: rgba(40, 40, 40, 0.3) !important;
+}
+
+/* --- Icon Styles (for Pagination Arrows) --- */
+.ui.menu .item>i.icon {
+  opacity: 0.9;
+  margin-right: 0.35714286em;
+}
+
+i.icon,
+i.icons {
+  font-size: 1em;
+  display: inline-block;
+  margin-right: 0.25rem;
+  width: 1.18em;
+  height: 1em;
+  font-family: Icons;
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+i.icon.chevron.left:before {
+  content: "\f053";
+}
+
+i.icon.chevron.right:before {
+  content: "\f054";
+}
+
+/* --- Link Defaults --- */
+
+
+/* --- Optional Scrollbar and Selection Styles --- */
+/* Remove these if not needed */
+body ::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+}
+
+body ::-webkit-scrollbar-thumb {
+  cursor: pointer;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.25);
+  transition: color 0.2s ease;
+}
+
+body ::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 0;
+}
+
+::selection {
+  background-color: #cce2ff;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+
+@media (max-width: 768px) {
+
+  /* Reduce font size and padding */
+  .ui.pagination.menu .item {
+    padding: 0.5em 0.75em;
+    font-size: 0.8rem;
+  }
+
+  .full-pagination {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobile-pagination {
+    display: none !important;
+  }
+}
+
+/* Hide full version on mobile */
+@media (max-width: 768px) {
+  .full-pagination {
+    display: none !important;
+  }
+}

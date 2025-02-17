@@ -1,0 +1,221 @@
+/* Contact Us */
+
+#contact-us {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #00b4d8;
+  color: white;
+  box-sizing: border-box;
+  min-height: fit-content;
+
+}
+
+.contact-us-container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-us-head h2 {
+  font-size: 32px;
+}
+
+.contact-us-head p {
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.contact-us-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 5px;
+}
+
+.contact-us-link {
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+.contact-us-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  /* Set a fixed width */
+  height: 125px;
+  /* Set a fixed height */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  transition: transform 0.1s ease-out;
+  /* Faster and smoother scaling */
+  backface-visibility: hidden;
+  /* Prevents shaking and distortion */
+  transform: translateZ(0);
+  /* Fixes blurring and shaking issues */
+}
+
+.contact-us-icon:hover {
+  transform: scale(1.05);
+  /* Enlarge the entire container by 10% on hover */
+}
+
+.contact-us-icon img {
+  width: 100px;
+  /* Set the icon image width */
+  height: 100px;
+  /* Set the icon image height */
+  object-fit: contain;
+  /* Ensure the image fits well without distortion */
+}
+
+.contact-us-icon span {
+  margin-top: 8px;
+  /* Optional: Add some space between the icon and text */
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.footer-nav p {
+  margin-top: 5rem;
+}
+
+.footer-upper-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  align-content: center;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.upper-part {
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for each part */
+}
+
+.company {
+  flex-grow: 1.8;
+  padding-right: 60px;
+}
+
+.footer-logo {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.footer-info {
+  color: #b5b5b5;
+
+}
+
+
+.location-head-footer,
+.company-head-footer,
+.contact-info-head {
+  padding: 2rem 0 2rem 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #adb5bd;
+  /* font-weight:500; */
+  white-space: nowrap;
+}
+
+.location-info-footer,
+.company-info-footer,
+.contact-info-footer {
+
+  /*padding-left: 2%;  Reduced padding for responsiveness */
+  font-size: 18px;
+
+}
+
+footer p {
+  text-align: center;
+}
+
+.location-info-footer li,
+.company-info-footer li {
+  list-style: none;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.location-info-footer li:hover,
+.company-info-footer li:hover,
+.contact-info-footer span:hover {
+  color: #00b4d8;
+  /* Customize the hover color */
+}
+
+.contact-info-footer>* {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.contact-info-footer span {
+  margin-left: 6px;
+}
+
+.contact-socialmedia {
+  padding-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-socialmedia svg {
+  transition: transform 0.3s ease;
+  /* Smooth transition for the zoom effect */
+}
+
+.contact-socialmedia svg:hover {
+  transform: scale(1.25);
+  /* Zoom in by 20% on hover */
+}
+
+footer p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+    display: none;
+  }
+
+}

@@ -17,7 +17,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap"
   rel="stylesheet" />
-<link rel="preload" href="assets/home_back.jpg" as="image" />
 <!-- General Icon (if needed as a fallback) -->
 <link rel="shortcut icon" href="/assets/favicon/favicon.ico" type="image/x-icon" />
 <!-- 16x16 favicon for browsers -->
@@ -30,4 +29,3 @@
 <link rel="icon" type="image/png" sizes="512x512" href="/assets/favicon/android-chrome-512x512.png" />
 <!-- Apple Touch Icon for iOS (for iPhone, iPad, etc.) -->
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicon/apple-touch-icon.png" />
-@stack('styles')

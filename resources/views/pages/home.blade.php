@@ -5,9 +5,13 @@
 
 @push('styles')
 <link rel="stylesheet" href="css/style.css?v=1.101" />
+<link rel="stylesheet" href="{{ asset('css/app.css') }}">
 <link rel="stylesheet" href="css/mediaqueries-home.css?v=1.101" />
 @endpush
 
+@section('scripts')
+<script src="{{ asset('js/script.js') }}"></script>
+@endsection
 
 @section('content')
 <section id="first">
@@ -620,19 +624,19 @@
     <div class="second-details-container">
       <div class="second-inner-containers">
         <div class="icons-items">
-          <h3>17K+</h3>
+          <h3>25K+</h3>
           <p>Beds</p>
         </div>
         <div class="icons-items">
-          <h3>650+</h3>
+          <h3>1500+</h3>
           <p>Properties</p>
         </div>
         <div class="icons-items">
-          <h3>30+</h3>
+          <h3>40+</h3>
           <p>Students Assisted</p>
         </div>
         <div class="icons-items">
-          <h3>7+</h3>
+          <h3>18+</h3>
           <p>Cities</p>
         </div>
       </div>
@@ -857,9 +861,4 @@
     </div>
   </div>
 </section>
-@endsection
-
-
-@section('scripts')
-<script src="{{ asset('js/script.js') }}"></script>
 @endsection

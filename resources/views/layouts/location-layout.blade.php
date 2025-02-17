@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-  <link rel="preload" href="assets/home_back.jpg" as="image" />
   @include('includes.head')
   <!-- Include head section -->
   @stack('styles')
@@ -16,8 +15,6 @@
     @yield('content')
     <!-- This is where page-specific content will go -->
   </main>
-
-  @include('includes.our-partners')
 
   @include('includes.contactus')
 

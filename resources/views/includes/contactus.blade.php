@@ -10,13 +10,13 @@
     <div class="contact-us-body">
       <a href="tel:+447448519063" class="contact-us-link">
         <div class="contact-us-icon">
-          <img src="assets/callus_icon.png" alt="Call Us at +44 7448519063" />
+          <img src="{{ asset('assets/callus_icon.png') }}" alt="Call Us at +44 7448519063">
           <span>+44 7448519063</span>
         </div>
       </a>
       <a href="https://wa.me/447448519063" class="contact-us-link">
         <div class="contact-us-icon">
-          <img src="assets/whatsapp_icon.png" alt="Whatsapp Us at +44 7448519063" />
+          <img src="{{ asset('assets/whatsapp_icon.png') }}" alt="Whatsapp Us at +44 7448519063">
           <span>WhatsApp</span>
         </div>
       </a>
