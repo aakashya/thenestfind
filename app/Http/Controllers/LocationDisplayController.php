@@ -36,13 +36,14 @@ class LocationDisplayController extends Controller
                 // Get the last image from the array (if available)
                 $coverImage = '';
                 if (!empty($propertyPhotos)) {
-                    $lastPhoto = end($propertyPhotos);
-                    if (is_array($lastPhoto) && isset($lastPhoto['link'])) {
-                        $coverImage = $lastPhoto['link'];
-                    } elseif (is_string($lastPhoto)) {
-                        $coverImage = $lastPhoto;
+                    $firstPhoto = reset($propertyPhotos);
+                if (is_array($firstPhoto) && isset($firstPhoto['link'])) {
+                        $coverImage = $firstPhoto['link'];
+                } elseif (is_string($firstPhoto)) {
+                         $coverImage = $firstPhoto;
                     }
                 }
+
 
                 // Extract lowest price from rooms JSON column
                 $basePrices = collect(json_decode($accommodation->rooms, true))->map(function ($room) {
@@ -55,6 +56,8 @@ class LocationDisplayController extends Controller
                 return (object) [
                     'id'              => $accommodation->id,
                     'name'            => $accommodation->name,
+                    'partner'         => $accommodation->partner,
+                    'address'         => $accommodation->address,
                     'city'            => $accommodation->city,
                     'country'         => $accommodation->country,
                     'property_photos' => $propertyPhotos,

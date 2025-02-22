@@ -22,7 +22,7 @@
     <img src="assets/London-background.jpg" alt="London student residences">
   </div>
   <div class="image-head-container">
-    <h1 class="city-title">London Accommodations</h1>
+    <h1 class="city-title">{{ $city }} Accommodations</h1>
   </div>
 </section>
 
@@ -65,7 +65,7 @@
           </div>
           <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}" class="c13">
             <h4 class="c14">
-              <span>{{ $accommodation->name }}</span>
+              <span>{{ $accommodation->partner }} {{ $accommodation->name }}</span>
             </h4>
             <p class="c15">
               <svg width="14" height="14" fill="#6b7280" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg">
@@ -73,7 +73,7 @@
                   d="M8.1875 5.25C8.1875 6.45859 7.20859 7.4375 6 7.4375C4.79141 7.4375 3.8125 6.45859 3.8125 5.25C3.8125 4.04141 4.79141 3.0625 6 3.0625C7.20859 3.0625 8.1875 4.04141 8.1875 5.25ZM6 6.5625C6.72461 6.5625 7.3125 5.97461 7.3125 5.25C7.3125 4.52539 6.72461 3.9375 6 3.9375C5.27539 3.9375 4.6875 4.52539 4.6875 5.25C4.6875 5.97461 5.27539 6.5625 6 6.5625ZM11.25 5.25C11.25 7.63984 8.05078 11.8945 6.64805 13.65C6.31172 14.0684 5.68828 14.0684 5.35195 13.65C3.92461 11.8945 0.75 7.63984 0.75 5.25C0.75 2.35047 3.10047 0 6 0C8.89844 0 11.25 2.35047 11.25 5.25ZM6 0.875C3.58281 0.875 1.625 2.83281 1.625 5.25C1.625 5.67656 1.77348 6.26172 2.07781 6.98359C2.37613 7.6918 2.79531 8.46016 3.26945 9.22852C4.20078 10.7406 5.30547 12.1871 6 13.0594C6.69453 12.1871 7.79922 10.7406 8.73164 9.22852C9.20469 8.46016 9.62305 7.6918 9.92109 6.98359C10.2273 6.26172 10.375 5.67656 10.375 5.25C10.375 2.83281 8.41719 0.875 6 0.875Z"
                   fill="#6b7280"></path>
               </svg>
-              {{ $accommodation->city }}, {{ $accommodation->country }}
+              {{ $accommodation->address }}, {{ $accommodation->city }}
             </p>
             <div class="c16">
               From <span class="c17">{{ $currencySymbol }}{{ $lowestPrice }}</span> / week

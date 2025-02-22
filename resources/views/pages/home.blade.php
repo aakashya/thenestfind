@@ -707,35 +707,35 @@
 
     <div class="cities-container">
       <div class="city" data-country="UK">
-        <a href="london.html"><img src="assets/Cities/London.webp" alt="London" />
+        <a href="{{ route('city.show', 'london') }}"><img src="assets/Cities/London.webp" alt="London" />
           <span class="city-name">London</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="birmingham.html"><img src="assets/Cities/Birmingham.webp" alt="Birmingham" />
+        <a href="{{ route('city.show', 'birmingham') }}"><img src="assets/Cities/Birmingham.webp" alt="Birmingham" />
           <span class="city-name">Birmingham</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="manchester.html"><img src="assets/Cities/Manchester.webp" alt="Manchester" />
+        <a href="{{ route('city.show', 'manchester') }}"><img src="assets/Cities/Manchester.webp" alt="Manchester" />
           <span class="city-name">Manchester</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="leeds.html"><img src="assets/Cities/leeds.webp" alt="Leeds" />
+        <a href="{{ route('city.show', 'leeds') }}"><img src="assets/Cities/leeds.webp" alt="Leeds" />
           <span class="city-name">Leeds</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="brighton.html"><img src="assets/Cities/Brighton.webp" alt="Brighton" />
+        <a href="{{ route('city.show', 'brighton') }}"><img src="assets/Cities/Brighton.webp" alt="Brighton" />
           <span class="city-name">Brighton</span></a>
       </div>
       <div class="city" data-country="Ireland">
-        <a href="dublin.html"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
+        <a href="{{ route('city.show', 'dublin') }}"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
           <span class="city-name">Dublin</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="edinburgh.html"><img src="assets/Cities/Edinburgh.webp" alt="Edinburgh" />
+        <a href="{{ route('city.show', 'edinburgh') }}"><img src="assets/Cities/Edinburgh.webp" alt="Edinburgh" />
           <span class="city-name">Edinburgh</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="sheffield.html"><img src="assets/Cities/Sheffield.webp" alt="Sheffield" />
+        <a href="{{ route('city.show', 'sheffield') }}"><img src="assets/Cities/Sheffield.webp" alt="Sheffield" />
           <span class="city-name">Sheffield</span></a>
       </div>
       <div class="city" data-country="UK">
@@ -783,40 +783,48 @@
           <span class="city-name">York</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/New-York.webp" alt="New York" />
+        <a href="{{ route('city.show', 'new-york-city') }}"><img src="assets/Cities/New-York.webp" alt="New York" />
           <span class="city-name">New York</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Los-Angeles.webp" alt="Los Angeles" />
-          <span class="city-name">Los Angeles</span></a>
+        <a href="{{ route('city.show', 'boston') }}"><img src="assets/Cities/Boston.webp" alt="Boston" />
+          <span class="city-name">Boston</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/chicago.webp" alt="Chicago" />
+        <a href="{{ route('city.show', 'washington-dc') }}"><img src="assets/Cities/Washington-DC.webp" alt="Washington DC" />
+          <span class="city-name">Washington DC</span></a>
+      </div>
+      <div class="city" data-country="US">
+        <a href="{{ route('city.show', 'chicago') }}"><img src="assets/Cities/chicago.webp" alt="Chicago" />
           <span class="city-name">Chicago</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Austin.webp" alt="Austin" />
+        <a href="{{ route('city.show', 'austin') }}"><img src="assets/Cities/Austin.webp" alt="Austin" />
           <span class="city-name">Austin</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Washington-DC.webp" alt="Washington DC" />
-          <span class="city-name">Washington DC</span></a>
+        <a href="{{ route('city.show', 'los-angeles') }}"><img src="assets/Cities/Los-Angeles.webp" alt="Los Angeles" />
+          <span class="city-name">Los Angeles</span></a>
+      </div>
+      <div class="city" data-country="US">
+        <a href="{{ route('city.show', 'san-francisco') }}"><img src="assets/Cities/San-Francisco.webp" alt="San Francisco" />
+          <span class="city-name">San Francisco</span></a>
+      </div>
+      <div class="city" data-country="US">
+        <a href="{{ route('city.show', 'san-diego') }}"><img src="assets/Cities/san-diego.webp" alt="San Diego" />
+          <span class="city-name">San Diego</span></a>
+      </div>
+      <div class="city" data-country="US">
+        <a href="{{ route('city.show', 'dallas') }}"><img src="assets/Cities/Dallas.webp" alt="Dallas" />
+          <span class="city-name">Dallas</span></a>
+      </div>
+      <div class="city" data-country="US">
+        <a href="{{ route('city.show', 'jersey-city') }}"><img src="assets/Cities/jersey-city.webp" alt="Jersey City" />
+          <span class="city-name">Jersey City</span></a>
       </div>
       <div class="city" data-country="US">
         <a href="#" onClick="return false;"><img src="assets/Cities/Houston.webp" alt="Houston" />
           <span class="city-name">Houston</span></a>
-      </div>
-      <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Boston.webp" alt="Boston" />
-          <span class="city-name">Boston</span></a>
-      </div>
-      <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/San-Francisco.webp" alt="San Francisco" />
-          <span class="city-name">San Francisco</span></a>
-      </div>
-      <div class="city" data-country="US">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Dallas.webp" alt="Dallas" />
-          <span class="city-name">Dallas</span></a>
       </div>
       <div class="city" data-country="US">
         <a href="#" onClick="return false;"><img src="assets/Cities/philadelphia.webp" alt="Philadephia" />
