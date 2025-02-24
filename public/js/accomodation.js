@@ -67,7 +67,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let currentIndex = 0;
 
     if (totalImages === 0) {
-        console.error("No images found in .grid-images. Make sure the elements exist.");
+        console.error(
+            "No images found in .grid-images. Make sure the elements exist."
+        );
         return;
     }
 
@@ -77,13 +79,26 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        images.forEach((img) => img.classList.remove("visible", "left", "upper_right", "lower_right"));
+        images.forEach((img) =>
+            img.classList.remove(
+                "visible",
+                "left",
+                "upper_right",
+                "lower_right"
+            )
+        );
         images[startIndex % totalImages].classList.add("visible");
 
         if (window.innerWidth > 576) {
             images[startIndex % totalImages].classList.add("visible", "left");
-            images[(startIndex + 1) % totalImages].classList.add("visible", "upper_right");
-            images[(startIndex + 2) % totalImages].classList.add("visible", "lower_right");
+            images[(startIndex + 1) % totalImages].classList.add(
+                "visible",
+                "upper_right"
+            );
+            images[(startIndex + 2) % totalImages].classList.add(
+                "visible",
+                "lower_right"
+            );
         }
 
         let counter = document.querySelector(".image-counter");
@@ -110,7 +125,9 @@ document.addEventListener("DOMContentLoaded", () => {
             rightArrow.addEventListener("click", () => changeImage(1));
             leftArrow.addEventListener("click", () => changeImage(-1));
         } else {
-            console.error("Right or left arrow button not found. Make sure they exist in the DOM.");
+            console.error(
+                "Right or left arrow button not found. Make sure they exist in the DOM."
+            );
         }
     }
 
@@ -156,7 +173,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-
 document.addEventListener("DOMContentLoaded", () => {
     // Select all room elements
     const roomElements = document.querySelectorAll(".property-room-items");
@@ -179,13 +195,17 @@ document.addEventListener("DOMContentLoaded", () => {
             if (!imageContainers || imageContainers.length === 0) return;
 
             // Remove 'visible' class from all `.photo-item` divs
-            imageContainers.forEach((container) => container.classList.remove("visible"));
+            imageContainers.forEach((container) =>
+                container.classList.remove("visible")
+            );
 
             // Apply 'visible' class to the current `.photo-item`
             imageContainers[startIndex % totalImages].classList.add("visible");
 
             if (counter) {
-                counter.textContent = `${(startIndex % totalImages) + 1}/${totalImages}`;
+                counter.textContent = `${
+                    (startIndex % totalImages) + 1
+                }/${totalImages}`;
             }
         }
 
@@ -235,138 +255,95 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// fullscreeen
+document.addEventListener("DOMContentLoaded", function () {
+    let allImages = [];
+    let imageSources = [];
+    let currentImageIndex = 0;
 
-// // Fullscreen functionality starts here
+    const modal = document.getElementById("image-full-modal");
+    const modalImage = document.querySelector(".modal-full-image");
+    const closeModal = document.querySelector(".close-full-modal");
+    const leftArrowModal = document.querySelector(".left-arrow-full-modal");
+    const rightArrowModal = document.querySelector(".right-arrow-full-modal");
 
-// // Select all images across all grids (main and room grids)
-// let allImages = [];
-// let imageSources = [];
-// let currentImageIndex = 0;
+    // Function to collect images dynamically
+    function gatherImages() {
+        allImages = [];
+        imageSources = [];
 
-// // Collect images from the main grid and all rooms
-// function gatherImages() {
-//     allImages = [];
-//     imageSources = [];
+        document.querySelectorAll(".grid-images .item img, .property-room-items .photo-item img")
+            .forEach((img) => {
+                allImages.push(img);
+                imageSources.push(img.src);
+            });
+    }
 
-//     // Gather images from the main grid
-//     let mainGridImages = document.querySelectorAll(".grid-images .item img");
-//     mainGridImages.forEach((img) => {
-//         allImages.push(img);
-//         imageSources.push(img.src);
-//     });
+    // Function to open modal
+    function openModal(index) {
+        modal.classList.add("show");
+        modalImage.src = imageSources[index];
+        currentImageIndex = index;
+        document.addEventListener("keydown", handleKeyNavigation);
+    }
 
-//     // Gather images from all rooms
-//     let roomImages = document.querySelectorAll(
-//         ".property-room-items .photo-item img"
-//     );
-//     roomImages.forEach((img) => {
-//         allImages.push(img);
-//         imageSources.push(img.src);
-//     });
-// }
+    // Function to close modal
+    function closeImageModal() {
+        modal.classList.remove("show");
+        document.removeEventListener("keydown", handleKeyNavigation);
+    }
 
-// // Call the function initially to gather all images
-// gatherImages();
+    // Function to navigate images
+    function navigateLeft() {
+        currentImageIndex = (currentImageIndex - 1 + imageSources.length) % imageSources.length;
+        modalImage.src = imageSources[currentImageIndex];
+    }
 
-// // Fullscreen modal elements
-// const modal = document.getElementById("image-full-modal");
-// const modalImage = document.querySelector(".modal-full-image");
-// const closeModal = document.querySelector(".close-full-modal");
-// const leftArrowModal = document.querySelector(".left-arrow-full-modal");
-// const rightArrowModal = document.querySelector(".right-arrow-full-modal");
+    function navigateRight() {
+        currentImageIndex = (currentImageIndex + 1) % imageSources.length;
+        modalImage.src = imageSources[currentImageIndex];
+    }
 
-// // Function to open the modal
-// function openModal(index) {
-//     modal.classList.add("show");
-//     modalImage.src = imageSources[index];
-//     currentImageIndex = index;
+    // Event Handlers
+    closeModal.addEventListener("click", closeImageModal);
+    modal.addEventListener("click", (e) => e.target === modal && closeImageModal());
+    leftArrowModal.addEventListener("click", navigateLeft);
+    rightArrowModal.addEventListener("click", navigateRight);
 
-//     // Add event listener for keyboard navigation
-//     document.addEventListener("keydown", handleKeyNavigation);
-// }
+    // Keyboard Navigation
+    function handleKeyNavigation(e) {
+        if (e.key === "ArrowLeft") navigateLeft();
+        if (e.key === "ArrowRight") navigateRight();
+        if (e.key === "Escape") closeImageModal();
+    }
 
-// // Function to close the modal
-// function closeImageModal() {
-//     modal.classList.remove("show");
+    // Swipe functionality for mobile
+    let touchStartX = 0, touchEndX = 0;
 
-//     // Remove the keydown event listener when the modal is closed
-//     document.removeEventListener("keydown", handleKeyNavigation);
-// }
+    modal.addEventListener("touchstart", (e) => (touchStartX = e.changedTouches[0].screenX));
+    modal.addEventListener("touchend", (e) => {
+        touchEndX = e.changedTouches[0].screenX;
+        if (touchEndX < touchStartX - 50) navigateRight();
+        if (touchEndX > touchStartX + 50) navigateLeft();
+    });
 
-// // Close modal when the close button is clicked
-// closeModal.addEventListener("click", closeImageModal);
+    // Add event listeners to all images to open them in fullscreen
+    function addImageListeners() {
+        allImages.forEach((img, index) => {
+            img.addEventListener("click", () => openModal(index));
+        });
+    }
 
-// // Close modal when clicking on the background (outside the image)
-// modal.addEventListener("click", (e) => {
-//     if (e.target === modal) {
-//         closeImageModal();
-//     }
-// });
+    // Initialize image handling
+    function initializeImageHandling() {
+        gatherImages();
+        addImageListeners();
+    }
 
-// // Function to navigate to the previous image
-// function navigateLeft() {
-//     currentImageIndex =
-//         (currentImageIndex - 1 + imageSources.length) % imageSources.length;
-//     modalImage.src = imageSources[currentImageIndex];
-// }
+    // Run initial setup
+    initializeImageHandling();
+});
 
-// // Function to navigate to the next image
-// function navigateRight() {
-//     currentImageIndex = (currentImageIndex + 1) % imageSources.length;
-//     modalImage.src = imageSources[currentImageIndex];
-// }
-
-// // Left and right arrow button navigation
-// leftArrowModal.addEventListener("click", navigateLeft);
-// rightArrowModal.addEventListener("click", navigateRight);
-
-// // Add event listeners to all images to open them in fullscreen
-// function addImageListeners() {
-//     allImages.forEach((img, index) => {
-//         img.addEventListener("click", () => {
-//             openModal(index);
-//         });
-//     });
-// }
-
-// // Initial image listener setup
-// addImageListeners();
-
-// // Reinitialize image gathering and listeners when needed (for example, if you add more rooms dynamically)
-// function reinitializeImageHandling() {
-//     gatherImages();
-//     addImageListeners();
-// }
-
-// // Swipe functionality for mobile users in fullscreen mode
-// let touchStartX = 0;
-// let touchEndX = 0;
-
-// modal.addEventListener("touchstart", function (e) {
-//     touchStartX = e.changedTouches[0].screenX;
-// });
-
-// modal.addEventListener("touchend", function (e) {
-//     touchEndX = e.changedTouches[0].screenX;
-//     handleSwipe();
-// });
-
-// function handleSwipe() {
-//     if (touchEndX < touchStartX - 50) {
-//         navigateRight(); // Swipe left (next image)
-//     } else if (touchEndX > touchStartX + 50) {
-//         navigateLeft(); // Swipe right (previous image)
-//     }
-// }
-
-// // Function to handle keyboard navigation
-// function handleKeyNavigation(e) {
-//     if (e.key === "ArrowLeft") {
-//         navigateLeft(); // Left arrow key
-//     } else if (e.key === "ArrowRight") {
-//         navigateRight(); // Right arrow key
-//     }
-// }
 
 // Here for the right section accordion
 document
@@ -402,91 +379,49 @@ document
         });
     });
 
-// Select the modal and the buttons
-// const nestfindModal = document.getElementById("nestfind-modal");
-// // Remove this line as the button now has 'enquire-now-btn' id
-// // const openModalButton = document.getElementById("open-modal-button");
+document.addEventListener("DOMContentLoaded", function () {
+    const nestfindModal = document.getElementById("nestfind-modal");
+    const closeButton = document.querySelector(".close-button");
 
-// const closeButton = document.querySelector(".close-button");
+    // Function to open modal
+    function openModal() {
+        nestfindModal.classList.add("active");
+    }
 
-// Function to open the modal for 'Enquire Now' button
-// document
-//     .getElementById("enquire-now-btn")
-//     .addEventListener("click", function () {
-//         nestfindModal.classList.add("active"); // Add 'active' class to show the modal
-//     });
+    // Function to close modal
+    closeButton.addEventListener("click", function () {
+        nestfindModal.classList.remove("active");
+    });
 
-// // Function to close the modal when the 'X' button is clicked
-// closeButton.addEventListener("click", function () {
-//     nestfindModal.classList.remove("active"); // Remove 'active' class to hide the modal
-// });
+    // Close modal if clicked outside
+    window.addEventListener("click", function (event) {
+        if (event.target === nestfindModal) {
+            nestfindModal.classList.remove("active");
+        }
+    });
 
-// // Function to close the modal if the user clicks outside the modal content
-// window.addEventListener("click", function (event) {
-//     if (event.target === nestfindModal) {
-//         nestfindModal.classList.remove("active");
-//     }
-// });
+    // Handle 'Enquire Now' button click (General Enquiry)
+    document
+        .getElementById("enquire-now-btn")
+        .addEventListener("click", function () {
+            document.getElementById("room-id").value = ""; // No specific room
+            openModal();
+        });
 
-// For Book Now buttons
-// document.querySelectorAll(".book-now-btn").forEach((button) => {
-//     button.addEventListener("click", function () {
-//         const roomItem = this.closest(".room-length-item");
+    // Handle 'Book Now' buttons for specific rooms
+    document.querySelectorAll(".book-now-btn").forEach((button) => {
+        button.addEventListener("click", function () {
+            const roomItem = this.closest(".room-length-item");
 
-//         // Check if we have a valid room item
-//         if (roomItem) {
-//             const duration = roomItem
-//                 .querySelector(".duration-time p")
-//                 .textContent.trim();
-//             const price = roomItem
-//                 .querySelector(".price-value")
-//                 .textContent.trim();
+            if (roomItem) {
+                const roomId = roomItem.getAttribute("data-room-id"); // Fetch room ID
+                document.getElementById("room-id").value = roomId; // Set in form
 
-//             // Find the nearest room-details container
-//             const roomDetails =
-//                 this.closest(".room-length").previousElementSibling;
-
-//             if (roomDetails && roomDetails.querySelector("h3")) {
-//                 const roomName = roomDetails
-//                     .querySelector("h3")
-//                     .textContent.trim();
-
-//                 // Get accommodation name from the property header
-//                 const accommodationName = document
-//                     .querySelector(".property-head-name h1")
-//                     .textContent.trim();
-
-//                 // Set form hidden input values
-//                 document.getElementById("room-duration").value = duration;
-//                 document.getElementById("room-price").value = price;
-//                 document.getElementById("accommodation-name").value =
-//                     accommodationName;
-//                 document.getElementById("room-name").value = roomName;
-
-//                 // Open the modal
-//                 nestfindModal.classList.add("active");
-//             } else {
-//                 console.error(
-//                     "Room details not found for the clicked Book Now button"
-//                 );
-//             }
-//         }
-//     });
-// });
-
-// For Enquire Now button
-// document
-//     .getElementById("enquire-now-btn")
-//     .addEventListener("click", function () {
-//         // Set form hidden input values to empty or N/A
-//         document.getElementById("room-duration").value = "N/A";
-//         document.getElementById("room-price").value = "N/A";
-//         document.getElementById("accommodation-name").value = "N/A";
-//         document.getElementById("room-name").value = "N/A";
-
-//         // Open the modal
-//         nestfindModal.classList.add("active");
-//     });
+                openModal();
+            }
+        });
+    });
+});
 
 // readmore
 // document.querySelectorAll('.property-about-body').forEach(function(descriptionContainer) {

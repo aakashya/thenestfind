@@ -16,6 +16,10 @@
     <!-- This is where page-specific content will go -->
   </main>
 
+  @include('includes.form-modal')
+
+  @include('includes.fullscreen-modal')
+
   @include('includes.contactus')
 
   @include('includes.footer')

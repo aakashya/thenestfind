@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AccommodationDisplayController;
 use App\Http\Controllers\LocationDisplayController;
+use App\Http\Controllers\FormSubmissionController;
 
 require base_path('routes/api.php');
 
@@ -51,3 +52,9 @@ Route::get('/city/{page}', function ($page) {
 Route::get('/static/{page}', function ($page) {
     return serveStaticPage('other', $page);
 })->where('page', '[A-Za-z0-9_-]+');
+
+
+Route::post('/form-submit', [FormSubmissionController::class, 'submit'])->name('form.submit');
+
+
+Route::redirect('/aboutus', '/static/about', 301);

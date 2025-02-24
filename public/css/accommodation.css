@@ -347,7 +347,7 @@ a {
 .image-full-modal {
   display: none;
   position: fixed;
-  z-index: 1000;
+  z-index: 9999;
   left: 0;
   top: 0;
   width: 100%;
@@ -1096,6 +1096,7 @@ button[type="submit"]:hover {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 14px;
+  margin: 0px 0 20px;
 }
 
 .phone-input input[type="tel"] {

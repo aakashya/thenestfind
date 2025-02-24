@@ -3,18 +3,23 @@
     <span class="close-button">&times;</span>
     <div class="right-modal">
       <h2>Enquire Now</h2>
-      <form action="https://formspree.io/f/xpwzadlv" method="POST" id="nestfind-form">
-        <label for="first-name">Full Name</label>
-        <input type="text" id="first-name" name="Full-Name" placeholder="Enter your Full Name" required>
 
+      <form action="{{ route('form.submit') }}" method="POST" id="nestfind-form">
+        @csrf <!-- Security Token -->
+        
+        <!-- Full Name -->
+        <label for="full_name">Full Name</label>
+        <input type="text" id="full_name" name="full_name" placeholder="Enter your Full Name" required>
+
+        <!-- Email -->
         <label for="email">Email</label>
-        <input type="email" id="email" name="Email" placeholder="Enter your Email Address" required>
+        <input type="email" id="email" name="email" placeholder="Enter your Email Address" required>
 
+        <!-- Phone Number with Country Code -->
         <label for="phone">Phone Number</label>
         <div class="phone-input">
-          <div class="select-wrapper">
-            <select id="country-code" name="Country-Code" required>
-              <option value="+44">UK (+44)</option>
+          <select id="country_code" name="country_code" required>
+            <option value="+44">UK (+44)</option>
               <option value="+1">US (+1)</option>
               <option value="+91">IN (+91)</option>
               <option value="+61">AU (+61)</option>
@@ -222,14 +227,16 @@
               <option value="+967">YE (+967)</option>
               <option value="+260">ZM (+260)</option>
               <option value="+263">ZW (+263)</option>
-            </select>
-          </div>
-          <input type="tel" id="phone" name="Phone-Number" placeholder="Enter your Phone Number" required>
+          </select>
+          <input type="tel" id="phone" name="phone_number" placeholder="Enter your Phone Number" required>
         </div>
-        <input type="hidden" id="accommodation-name" name="Accommodation-Name">
-        <input type="hidden" id="room-name" name="Room-Name" value="">
-        <input type="hidden" id="room-duration" name="Room-Duration" value="">
-        <input type="hidden" id="room-price" name="Room-Price" value="">
+
+        <!-- Hidden Fields for Database Lookup -->
+        <input type="hidden" name="accommodation_id" value="{{ $accommodation->id }}">
+        <input type="hidden" name="room_id" id="room-id">
+        <input type="hidden" name="submission_url" value="{{ url()->current() }}">
+
+        <!-- Submit Button -->
         <button type="submit">Submit</button>
       </form>
     </div>

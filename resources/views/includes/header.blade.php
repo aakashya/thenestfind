@@ -106,7 +106,7 @@
             <div class="hamburger-dropdown" id="hamburger-dropdown" style="display: none;">
               <ul>
                 <li>
-                  <a href="/aboutus.html">About Us</a>
+                  <a href="/aboutus">About Us</a>
                 </li>
                 <li>
                   <a href="javascript:void(0);">
