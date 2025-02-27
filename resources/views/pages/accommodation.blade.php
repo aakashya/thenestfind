@@ -3,9 +3,9 @@
 @section('title', $accommodation->name)
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/accommodation.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<link rel="stylesheet" href="{{ asset('css/mediaqueries-accommodation.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/accommodation.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/mediaqueries-accommodation.css') }}?v={{ time() }}">
 @endpush
 
 
