@@ -783,7 +783,7 @@
           <span class="city-name">York</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="{{ route('city.show', 'new-york-city') }}"><img src="assets/Cities/New-York.webp" alt="New York" />
+        <a href="{{ route('city.show', 'new-york-city') }}"><img src="assets/Cities/new-york.webp" alt="New York" />
           <span class="city-name">New York</span></a>
       </div>
       <div class="city" data-country="US">
@@ -791,7 +791,7 @@
           <span class="city-name">Boston</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="{{ route('city.show', 'washington-dc') }}"><img src="assets/Cities/Washington-DC.webp" alt="Washington DC" />
+        <a href="{{ route('city.show', 'washington-dc') }}"><img src="assets/Cities/washington-dc.webp" alt="Washington DC" />
           <span class="city-name">Washington DC</span></a>
       </div>
       <div class="city" data-country="US">
