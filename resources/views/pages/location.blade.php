@@ -3,11 +3,11 @@
 @section('title', $city)
 
 @push('styles')
-<link rel="stylesheet" href="{{ asset('css/locations.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<link rel="stylesheet" href="{{ asset('css/properties.css') }}">
-<link rel="stylesheet" href="{{ asset('css/mediaqueries-location.css') }}" />
-<link rel="stylesheet" href="{{ asset('css/pagination.css') }}">
+<link rel="stylesheet" href="{{ asset('css/locations.css') }}?v={{ time() }}" />
+<link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/properties.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/mediaqueries-location.css') }}?v={{ time() }}" />
+<link rel="stylesheet" href="{{ asset('css/pagination.css') }}?v={{ time() }}">
 
 @endpush
 

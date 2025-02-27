@@ -4,9 +4,9 @@
 @section('title', 'Nest Find')
 
 @push('styles')
-<link rel="stylesheet" href="css/style.css?v=1.101" />
-<link rel="stylesheet" href="{{ asset('css/app.css') }}">
-<link rel="stylesheet" href="css/mediaqueries-home.css?v=1.101" />
+<link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/app.css') }}?v={{ time() }}">
+<link rel="stylesheet" href="{{ asset('css/mediaqueries-home.css') }}?v={{ time() }}">
 @endpush
 
 @section('scripts')
