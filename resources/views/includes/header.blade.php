@@ -88,7 +88,7 @@
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_ireland.svg" alt="Ireland logo" />
                 <span>Dublin</span>
               </a>
-              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'new-york']) }}">
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'new-york-city']) }}">
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
                 <span>New York</span>
               </a>
