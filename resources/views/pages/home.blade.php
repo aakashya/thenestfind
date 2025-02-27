@@ -803,11 +803,11 @@
           <span class="city-name">Austin</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="{{ route('city.show', 'los-angeles') }}"><img src="assets/Cities/Los-Angeles.webp" alt="Los Angeles" />
+        <a href="{{ route('city.show', 'los-angeles') }}"><img src="assets/Cities/los-angeles.webp" alt="Los Angeles" />
           <span class="city-name">Los Angeles</span></a>
       </div>
       <div class="city" data-country="US">
-        <a href="{{ route('city.show', 'san-francisco') }}"><img src="assets/Cities/San-Francisco.webp" alt="San Francisco" />
+        <a href="{{ route('city.show', 'san-francisco') }}"><img src="assets/Cities/san-francisco.webp" alt="San Francisco" />
           <span class="city-name">San Francisco</span></a>
       </div>
       <div class="city" data-country="US">
