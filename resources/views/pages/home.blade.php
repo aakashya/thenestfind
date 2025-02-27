@@ -624,7 +624,7 @@
     <div class="second-details-container">
       <div class="second-inner-containers">
         <div class="icons-items">
-          <h3>20K+</h3>
+          <h3>25K+</h3>
           <p>Beds</p>
         </div>
         <div class="icons-items">
