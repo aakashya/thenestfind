@@ -767,7 +767,7 @@
           <span class="city-name">Liverpool</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="#" onClick="return false;"><img src="assets/Cities/New-castle.webp" alt="New Castle" />
+        <a href="#" onClick="return false;"><img src="assets/Cities/new-castle.webp" alt="New Castle" />
           <span class="city-name">New Castle</span></a>
       </div>
       <div class="city" data-country="UK">
@@ -775,7 +775,7 @@
           <span class="city-name">Nottingham</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Southampton.webp" alt="Southampton" />
+        <a href="#" onClick="return false;"><img src="assets/Cities/southampton.webp" alt="Southampton" />
           <span class="city-name">Southampton</span></a>
       </div>
       <div class="city" data-country="UK">
@@ -859,7 +859,7 @@
           <span class="city-name">Perth</span></a>
       </div>
       <div class="city" data-country="Australia">
-        <a href="#" onClick="return false;"><img src="assets/Cities/Gold-Coast.webp" alt="Gold Coast" />
+        <a href="#" onClick="return false;"><img src="assets/Cities/gold-coast.webp" alt="Gold Coast" />
           <span class="city-name">Gold Coast</span></a>
       </div>
       <div class="city" data-country="Australia">
