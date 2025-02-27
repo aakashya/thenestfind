@@ -1,0 +1,196 @@
+/* .c1 {
+  --bs-gutter-x: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; 
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  padding-top: 40px;
+  flex: 1 1 300px;
+} */
+
+.c1 {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: -15px;
+  box-sizing: border-box;
+  padding-top: 40px;
+  --bs-gutter-x: 30px;
+  --bs-gutter-y: 0px;
+}
+
+
+/* Fixing gap properties for direct children */
+.c1>.c2 {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: calc(var(--bs-gutter-x)* 0.5);
+  padding-left: calc(var(--bs-gutter-x)* 0.5);
+  box-sizing: border-box;
+  /* flex: 0 0 33.3333%; */
+  /* max-width: 33.3333%; Limits width to 33.33% for 3 columns */
+
+}
+
+.c2 {
+  flex: 0 0 calc(33.3333%);
+  /* 3 columns with space between them  */
+  /* max-width: calc(33.3333%); */
+  box-sizing: border-box;
+  /* Ensures padding doesn't affect width */
+  margin-bottom: 30px;
+  /* Adds space between rows */
+}
+
+
+.c3 {
+  display: block;
+  flex: 1;
+  background-color: white;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.c3 a,
+.c3 a:before,
+.c3 a:after,
+.c3 a:hover {
+  text-decoration: none !important;
+  /* Remove underline in all states */
+  color: inherit;
+  /* Optional: Ensure color is inherited from the parent */
+}
+
+.c3 a:hover {
+  color: inherit;
+  /* Remove color change on hover, if any */
+}
+
+.c4 {
+  overflow: hidden;
+  position: relative;
+  border-radius: 4px;
+}
+
+.c5 {
+  position: relative;
+  z-index: 0;
+  border-radius: inherit;
+  aspect-ratio: 8/5;
+}
+
+.c6 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  border-radius: inherit;
+}
+
+.c7 {
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* .c8 {
+  position: absolute;
+  top: 20px;
+  left: 0;
+} */
+
+/* .c9 {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 0 4px 4px 0;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  background-color: #ff4b4b;
+  color: white;
+} */
+
+/* Ensure proper spacing for the heart icon */
+/* .c10 {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: white;
+  border-radius: 100%;
+  width: 34px;
+  height: 34px;
+  font-size: 14px;
+  z-index: 10;
+  transition: all 0.2s;
+} */
+
+/* .c11:before {
+  content: '\e902';
+} */
+
+.c12 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.c13 {
+  display: block;
+  padding: 22px 30px;
+}
+
+.c14 {
+  font-size: 20px;
+  /* font-weight: 500; */
+  line-height: 1.6 !important;
+  color: #172A7E;
+}
+
+.c15 {
+  font-size: 14px;
+  line-height: 14px;
+  margin-top: 5px;
+  color: #999;
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.c16 {
+  margin-top: 5px;
+  line-height: 1.875 !important;
+}
+
+.c17 {
+  font-weight: 700;
+  font-size: 18px;
+  color: #007bff;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+  /* Optional: Keeps the same color as the parent element */
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+      display: none;
+  }
+
+}

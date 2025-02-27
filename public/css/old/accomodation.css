@@ -1,0 +1,1390 @@
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: rgb(249, 250, 251);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+a {
+  text-decoration: none !important;
+  color: inherit;
+  /* Optional: Keeps the same color as the parent element */
+}
+
+/* TRANSITION */
+
+a {
+  transition: all 300ms ease;
+}
+
+/* DESKTOP NAV */
+#desktop-nav {
+  position: sticky;
+  top: 0;
+  font-family: "Noto Sans", sans-serif;
+  background: hsla(0, 0%, 100%, .8);
+  border-bottom: 1px solid #eaeaea;
+  /* position: sticky; */
+  backdrop-filter: blur(8px);
+  z-index: 1001;
+  width: 100%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 84px;
+  width: 100%;
+  margin: auto;
+  max-width: 1344px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+
+
+.logo {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  text-decoration: none;
+  /* Remove underline from link */
+
+}
+
+.logo-name {
+  font-size: 40px;
+  font-weight: bold;
+  color: black;
+}
+
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  /* Adjust size as needed */
+  height: 51px;
+}
+
+.logo-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+.nav-item {
+  padding: 0 10px 0 10px;
+}
+
+.nav-links-container {
+  height: 30px;
+  border: 2px solid black;
+  border-radius: 8px;
+  padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  margin: 0 auto;
+  top: 50%;
+  left: 50%;
+}
+
+.hamburger-option img {
+  width: 30px;
+  height: 20px;
+  /* filter: brightness(0) invert(1); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.nav-contact-wrapper {
+  display: flex;
+  /* Makes items appear in a row */
+  gap: 15px;
+  /* Adds spacing between the items */
+  align-items: center;
+  /* Vertically aligns items */
+  position: relative;
+}
+
+.nav-contact-item {
+  cursor: pointer;
+}
+
+.nav-contact-item:nth-child(1) img {
+  width: 40px;
+  height: 40px;
+}
+
+.nav-contact-item:nth-child(2) img {
+  width: 30px;
+  height: 30px;
+  /* filter: brightness(0) invert(1); */
+}
+
+.nav-contact-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(211, 211, 211, 0.5);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.nav-contact-icons {
+  background-color: rgba(211, 211, 211, 0.5);
+  padding: 5px 15px;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+}
+
+
+
+.contact-popper {
+  position: absolute;
+  top: 120%;
+  right: 0%;
+  background-color: #fff;
+  border: 1px solid #b4b4b4;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  z-index: 1001;
+}
+
+.contact-popper ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-popper li {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+}
+
+.contact-popper li:last-child {
+  margin-bottom: 0;
+}
+
+.contact-popper li a {
+  font-size: 16px;
+  color: #222;
+  font-weight: 400;
+}
+
+.contact-popper img {
+  margin-right: 8px;
+}
+
+.contact-icon-inverted {
+  filter: invert(1);
+}
+
+.hamburger-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  height: 100%;
+}
+
+.hamburger-option {
+  position: relative;
+  display: inline-block;
+}
+
+
+.hamburger-dropdown {
+  display: none;
+  position: absolute;
+  top: 155%;
+  right: -30%;
+  background-color: #fff;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  z-index: 1000;
+  padding: 10px 0;
+  min-width: 150px;
+  /* Adjust width if needed */
+}
+
+.hamburger-dropdown ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.hamburger-dropdown li {
+  padding: 10px 15px;
+}
+
+.hamburger-dropdown li:hover {
+  background-color: #f0f0f0;
+  /* Light gray on hover */
+}
+
+.hamburger-dropdown a {
+  text-decoration: none;
+  color: #333;
+  /* Dark text */
+  font-size: 14px;
+}
+
+.hamburger-dropdown a span {
+  font-weight: bold;
+  color: #007bff;
+  /* Optional: color the GBP amount */
+}
+
+/* Dropdown specific styles */
+.location-container .dropdown {
+  position: relative;
+  /* Set relative positioning to the parent container for proper alignment */
+}
+
+.dropdown-options {
+  display: none;
+  top: 100%;
+  left: -5%;
+  position: absolute;
+  background: #fff;
+  width: 180px;
+  box-shadow: 0 4px 15.2px 0 rgba(0, 0, 0, .07);
+  z-index: 1001 !important;
+  padding: 1px 0 0;
+  border-radius: 12px;
+  border: 1px solid #b4b4b4;
+}
+
+.nav-links-container:hover .dropdown-options,
+.dropdown-options:hover {
+  display: block;
+  /* Keep dropdown visible when hovering over it */
+}
+
+.dropdown a {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown svg {
+  width: 16px;
+  height: 12px;
+  fill: black;
+}
+
+.dropdown:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Dropdown content styling */
+.dropdownitems-link {
+  padding: 12px 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.dropdownitems-link:hover {
+  background: #1d1d1d;
+  color: #fff;
+}
+
+.dropdownitems-link img {
+  width: 22px;
+  height: 15px;
+}
+
+.dropdownitems-link:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+.navitem-dropdown-padding {
+  color: black;
+  text-decoration: none;
+  padding: 19px 5px;
+}
+
+
+
+/* Modal Styles */
+.image-full-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(8px);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-full-content {
+  position: relative;
+  padding: 20px;
+  background: transparent;
+}
+
+.modal-full-image {
+  max-width: 90vw;
+  /* 90% of the viewport width */
+  max-height: 80vh;
+  /* 80% of the viewport height */
+  object-fit: contain;
+  /* Maintain aspect ratio and fit within bounds */
+  border-radius: 10px;
+  width: auto;
+  /* Let width adapt naturally */
+  height: auto;
+  /* Let height adapt naturally */
+}
+
+.close-full-modal {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.left-arrow-full-modal,
+.right-arrow-full-modal {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 1.5rem;
+}
+
+.left-arrow-full-modal {
+  left: 20px;
+}
+
+.right-arrow-full-modal {
+  right: 20px;
+}
+
+.image-full-modal.show {
+  display: flex;
+}
+
+
+
+
+/* grid starts */
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+  padding: 0px 40px 32px;
+}
+
+.property-main-container {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.hero-carousel {
+  padding: 20px;
+  position: relative;
+  /* Ensure the nav buttons can be positioned inside */
+}
+
+.grid-images {
+  display: grid;
+  grid-template-columns: calc(66% - 5px) calc(34% - 5px);
+  grid-template-rows: calc(50% - 5px) calc(50% - 5px);
+  grid-gap: 10px;
+  max-height: 466px;
+  min-height: 461.312px;
+}
+
+.grid-images .left {
+  grid-column: 1 / 2;
+  grid-row: 1 / span 2;
+  /* grid-row-start: 1;
+  grid-row-end: 2; */
+  position: relative;
+  /* Make the left image a reference for absolute positioning */
+}
+
+
+.grid-images .upper_right {
+  grid-column: 2 / 2;
+  grid-row: 1 / 2;
+}
+
+.grid-images .lower_right {
+  grid-column: 2 / 2;
+  grid-row: 2 / 2;
+}
+
+.grid-images .item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* Ensure only the first 3 images are displayed */
+.grid-images .item {
+  display: none;
+  /* Hide all images initially */
+}
+
+.grid-images .item.visible {
+  display: block;
+  /* Only visible images will be displayed */
+}
+
+/* Navigation buttons */
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(66% - 20px);
+  /* Limit width to match the left image */
+  transform: translateY(-50%);
+  pointer-events: none;
+  /* Let only buttons handle events */
+}
+
+.left-arrow,
+.right-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  font-size: 1rem;
+  /* Smaller font size for arrows */
+  cursor: pointer;
+  padding: 10px;
+  pointer-events: auto;
+  /* Allow buttons to be clickable */
+  border-radius: 50%;
+  /* Circular background */
+  width: 40px;
+  /* Circle size */
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Center the arrow inside the circle */
+  font-weight: 600;
+}
+
+.left-arrow:hover,
+.right-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Darker on hover */
+}
+
+.left-arrow {
+  position: absolute;
+  left: 20px;
+}
+
+.right-arrow {
+  position: absolute;
+  right: 10px;
+}
+
+/* Counter styling */
+.image-counter {
+  position: absolute;
+  bottom: 30px;
+  left: 30px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  z-index: 10;
+  /* Ensure it appears on top of the image */
+}
+
+
+.property-overview {
+  padding-bottom: 20px;
+}
+
+.property-head {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.property-head-name p {
+  line-height: 150%;
+}
+
+.price {
+  font-weight: 700;
+  font-size: 24px;
+  color: #007bff;
+  text-align: right;
+}
+
+.price-around {
+  font-size: 14px;
+  text-align: right;
+}
+
+
+
+.property-about-container {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.property-about-head {
+  padding: 20px;
+  line-height: 1.55;
+}
+
+.property-about-body {
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  line-height: 1.55;
+}
+
+/* uncomment this to enable show more button. it's making number of lines to show on screen */
+/* .description {
+  max-height: 80px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+} */
+
+.read-more-btn {
+  background-color: #007bff;
+  border-radius: 40px;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.property-room-container {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+}
+
+.property-room-head {
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Container for room photos and details */
+.property-room-upper {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+/* Photos Section */
+.room-photos {
+  position: relative;
+  width: 50%;
+}
+
+/* Room details Section */
+.room-details {
+  width: 50%;
+}
+
+/* Images in the room-photos section */
+.room-photos img {
+  width: 100%;
+  max-height: 330px;
+  min-height: 324px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* Hide all images by default except for the one with class 'visible' */
+.photo-item {
+  display: none;
+}
+
+.photo-item.visible {
+  display: block;
+}
+
+/* Navigation buttons */
+.photo-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.room-left-arrow,
+.room-right-arrow {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: .8rem;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  pointer-events: auto;
+  font-weight: 500;
+}
+
+.room-left-arrow:hover,
+.room-right-arrow:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.room-left-arrow {
+  position: absolute;
+  left: 10px;
+}
+
+.room-right-arrow {
+  position: absolute;
+  right: 10px;
+}
+
+.room-image-counter {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: white;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.room-details {
+  line-height: 2.5;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.room-price {
+  font-weight: 550;
+  font-size: 20px;
+  color: #007bff;
+}
+
+.room-details-lower {
+  display: flex;
+  flex-wrap: wrap;
+
+  gap: 20px;
+  line-height: 1;
+}
+
+.room-detail-item {
+  flex: 0 1 calc(50% - 40px);
+  /* Make the items take 50% of the container width minus padding */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 30px;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+.room-details-lower>* {
+  padding: 10px;
+  /* Padding inside each item */
+}
+
+.room-length {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  padding-bottom: 10px;
+}
+
+.room-length-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 10px;
+  background-color: #f3f4f6;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.room-length-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-left: 10px;
+}
+
+.room-length-duration {
+  display: flex;
+  gap: 40px;
+}
+
+.room-length-price {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.price-value {
+  display: inline-block;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.book-now-btn {
+  padding: 10px 20px;
+  background-color: #3f83f8;
+  color: white;
+  border: 2px solid #3f83f8;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.book-now-btn:hover {
+  background-color: white;
+  color: #3f83f8;
+}
+
+.book-now-btn:focus {
+  outline: none;
+  box-shadow: 0 0 5px #3f83f8;
+}
+
+
+
+
+/* RIGHT SECTION */
+.right-section {
+  position: sticky;
+  top: 85px;
+  /* Adjust this to control how far from the top the sticky starts */
+  height: fit-content;
+  /* Ensure the right section takes up its content height */
+  z-index: 10;
+}
+
+
+
+.right-upper {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+.property-cta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+/* Common styles for both buttons */
+.property-cta button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.property-cta button:focus {
+  outline: none;
+}
+
+.property-cta button:active {
+  transform: scale(1.05);
+}
+
+.property-cta button {
+  transform: scale(1);
+}
+
+/* Specific style for 'View Rooms' */
+.view-rooms-btn {
+  background-color: transparent;
+  color: #3f83f8;
+  border: 2px solid #3f83f8;
+}
+
+.view-rooms-btn:hover {
+  background-color: #3f83f8;
+  color: #fff;
+}
+
+/* Specific style for 'Enquire Now' */
+.visit-site-btn {
+  background-color: #34d399;
+  color: #fff;
+  border: 2px solid #34d399;
+}
+
+.visit-site-btn:hover {
+  background-color: #2ec08f;
+  border-color: #2ec08f;
+}
+
+
+
+
+/* Right lower side section */
+.RightSection-module__subSection {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+/* Individual accordion item spacing */
+.accordion-item {
+  margin-top: 20px;
+}
+
+/* Accordion header style */
+.USPSection-module__accordionHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+/* Title in accordion header */
+.USPSection-module__accordianItemTitle {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+/* Icon margin in accordion header */
+.USPSection-module__iconWrapper {
+  margin-right: 10px;
+}
+
+/* Initially hidden accordion content */
+.accordion-content {
+  display: none;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+}
+
+/* Chevron rotation with smooth transition */
+.chevron {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+/* Rotate chevron icon when accordion is open */
+.chevron-icon.rotate {
+  transform: rotate(180deg);
+}
+
+/* Open state: content visible */
+.accordion-item.open .accordion-content {
+  display: block;
+  /* Accordion content becomes visible when .open class is applied */
+}
+
+
+
+
+
+
+
+
+/* Modal container by default (hidden) */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  /* Ensures modal is on top of all other elements */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  /* Dark transparent background */
+  backdrop-filter: blur(8px);
+  /* Blur effect */
+  -webkit-backdrop-filter: blur(8px);
+  /* Safari support */
+  pointer-events: none;
+  /* Disable interaction with background elements */
+}
+
+/* Modal is visible when .active class is applied */
+.modal.active {
+  display: block;
+  pointer-events: auto;
+  /* Enable interaction with the modal when active */
+}
+
+/* Modal content box */
+.modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 450px;
+  /* Adjust width as needed */
+  border-radius: 8px;
+  position: absolute;
+  z-index: 10000;
+  /* Ensures modal content is above the blurred background */
+
+  /* Center the modal using top, left, and transform */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Close button */
+.close-button {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Form elements styling */
+label {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+button[type="submit"] {
+  background-color: #182b46;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+button[type="submit"]:hover {
+  background-color: #0f1d34;
+}
+
+/* Right side of the modal (form section) */
+.right-modal {
+  padding: 20px;
+}
+
+
+
+
+/* Phone input with country code */
+.phone-input {
+  display: flex;
+  gap: 10px;
+  /* Space between the select and input */
+}
+
+.phone-input select {
+  width: 30%;
+  /* Adjust width as needed */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.phone-input input[type="tel"] {
+  width: 70%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  flex-grow: 1;
+}
+
+
+#country-code {
+  width: 100%;
+  padding: 10px;
+  margin: 0px 0 20px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+  color: #333;
+  /* Text color */
+  background-color: #fff;
+  /* Background color */
+  appearance: none;
+  /* Remove default styling */
+  -webkit-appearance: none;
+  /* Remove default styling for Safari */
+  -moz-appearance: none;
+  /* Remove default styling for Firefox */
+  cursor: pointer;
+  /* Change cursor to pointer */
+}
+
+/* Optional: Add a custom arrow for the select element */
+#country-code::after {
+  content: '';
+  /* Use an empty content */
+  position: absolute;
+  /* Position it absolutely */
+  right: 10px;
+  /* Space from the right */
+  top: 50%;
+  /* Center vertically */
+  transform: translateY(-50%);
+  /* Center adjustment */
+  border: solid transparent;
+  /* Create the arrow */
+  border-width: 5px;
+  /* Size of the arrow */
+  border-top-color: #333;
+  /* Arrow color */
+}
+
+/* Style for the wrapper if needed */
+.select-wrapper {
+  position: relative;
+  /* Set to relative for positioning arrow */
+  width: 25%;
+  /* Full width */
+}
+
+
+
+
+
+
+
+
+
+
+/* Contact Us */
+
+#contact-us {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #00b4d8;
+  color: white;
+  box-sizing: border-box;
+  min-height: fit-content;
+
+}
+
+.contact-us-container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-us-head h2 {
+  font-size: 32px;
+}
+
+.contact-us-head p {
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.contact-us-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 5px;
+}
+
+.contact-us-link {
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+.contact-us-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 121px;
+  /* Set a fixed width */
+  height: 121px;
+  /* Set a fixed height */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  transition: transform 0.1s ease-out;
+  /* Faster and smoother scaling */
+  backface-visibility: hidden;
+  /* Prevents shaking and distortion */
+  transform: translateZ(0);
+  /* Fixes blurring and shaking issues */
+}
+
+.contact-us-icon:hover {
+  transform: scale(1.05);
+  /* Enlarge the entire container by 10% on hover */
+}
+
+.contact-us-icon img {
+  width: 100px;
+  /* Set the icon image width */
+  height: 100px;
+  /* Set the icon image height */
+  object-fit: contain;
+  /* Ensure the image fits well without distortion */
+}
+
+.contact-us-icon span {
+  margin-top: 8px;
+  /* Optional: Add some space between the icon and text */
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.footer-nav p {
+  margin-top: 5rem;
+}
+
+.footer-upper-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  align-content: center;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.upper-part {
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for each part */
+}
+
+.company {
+  flex-grow: 1.8;
+  padding-right: 60px;
+}
+
+.footer-logo {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.footer-info {
+  color: #b5b5b5;
+
+}
+
+
+.location-head-footer,
+.company-head-footer,
+.contact-info-head {
+  padding: 2rem 0 2rem 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #adb5bd;
+  /* font-weight:500; */
+  white-space: nowrap;
+}
+
+.location-info-footer,
+.company-info-footer,
+.contact-info-footer {
+
+  /*padding-left: 2%;  Reduced padding for responsiveness */
+  font-size: 18px;
+
+}
+
+footer p {
+  text-align: center;
+}
+
+.location-info-footer li,
+.company-info-footer li {
+  list-style: none;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.location-info-footer li:hover,
+.company-info-footer li:hover,
+.contact-info-footer span:hover {
+  color: #00b4d8;
+  /* Customize the hover color */
+}
+
+.contact-info-footer>* {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.contact-info-footer span {
+  margin-left: 6px;
+}
+
+.contact-socialmedia {
+  padding-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-socialmedia svg {
+  transition: transform 0.3s ease;
+  /* Smooth transition for the zoom effect */
+}
+
+.contact-socialmedia svg:hover {
+  transform: scale(1.25);
+  /* Zoom in by 20% on hover */
+}
+
+footer p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+      display: none;
+  }
+
+}

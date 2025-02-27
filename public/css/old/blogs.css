@@ -1,0 +1,888 @@
+/* GENERAL */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Noto Sans", sans-serif;
+  background-color: rgb(249, 250, 251);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* TRANSITION */
+
+a {
+
+  text-decoration: none !important;
+  color: inherit;
+  /* Optional: Keeps the same color as the parent element */
+}
+
+/* DESKTOP NAV */
+#desktop-nav {
+  font-family: "Noto Sans", sans-serif;
+  background: hsla(0, 0%, 100%, .8);
+  border-bottom: 1px solid #eaeaea;
+  position: sticky;
+  backdrop-filter: blur(8px);
+  top: 0;
+  z-index: 999;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  height: 84px;
+  width: 100%;
+  margin: auto;
+  max-width: 1344px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.nav-links>li>a {
+  color: var(--Primary-Black-900, #1d1d1d);
+  text-decoration: none;
+  padding: 29px 5px;
+}
+
+
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  text-decoration: none;
+  /* Remove underline from link */
+  color: inherit;
+  /* Ensure the text color remains as the parent color */
+}
+
+.logo-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 64px;
+  /* Adjust size as needed */
+  height: 51px;
+}
+
+.logo-icon img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+}
+
+
+
+/* Dropdown specific styles */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-options {
+  display: none;
+  position: absolute;
+  background: #fff;
+  width: 180px;
+  box-shadow: 0 4px 15.2px 0 rgba(0, 0, 0, .07);
+  z-index: 999;
+  padding: 1px 0 0;
+  top: 100%;
+  border-radius: 0 0 12px 12px;
+}
+
+.dropdown:hover .dropdown-options {
+  display: block;
+}
+
+.dropdown a {
+  display: flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown svg {
+  width: 16px;
+  height: 12px;
+  fill: #1d1d1d;
+}
+
+.dropdown:hover svg {
+  transform: rotate(180deg);
+}
+
+/* Dropdown content styling */
+.dropdownitems-link {
+  padding: 12px 18px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 16px;
+  font-family: "Noto Sans", sans-serif;
+  line-height: 1.5;
+}
+
+.dropdownitems-link:hover {
+  background: #1d1d1d;
+  color: #fff;
+}
+
+.dropdownitems-link img {
+  width: 22px;
+  height: 15px;
+}
+
+.dropdownitems-link:last-child {
+  border-radius: 0 0 12px 12px;
+}
+
+
+
+
+
+
+/* General Styles for Mobile Nav */
+.mobile-nav {
+  position: relative;
+  z-index: 1000;
+}
+
+.hamburger-menu {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+.hamburger-icon {
+  font-size: 32px;
+}
+
+/* Drawer Styling */
+.mobile-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  pointer-events: none;
+}
+
+.drawer-mask {
+  position: absolute;
+  inset: 0;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: auto;
+}
+
+.drawer-content-wrapper {
+  position: absolute;
+  z-index: 1000;
+  width: 100vw;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -6px 0 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  transform: translateX(100%);
+  /* Hidden by default */
+}
+
+.drawer-content-wrapper.open {
+  transform: translateX(0);
+  /* Show drawer when opened */
+}
+
+.drawer-content {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.drawer-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 16px;
+  /* height: 84px; */
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.drawer-close {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.drawer-body {
+  padding: 24px;
+}
+
+/* Mobile Dropdown for Locations */
+.menu-item.mobile-dropdown {
+  display: flex;
+  flex-direction: column;
+  /* Ensure flex column to make dropdown open below */
+  align-items: flex-start;
+  padding: 12px 0;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeaea;
+  /* Line under Locations */
+}
+
+.dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* Make sure header and arrow take up full width */
+}
+
+.dropdown-header svg.dropdown-arrow {
+  transition: transform 0.3s ease;
+}
+
+/* Rotate arrow on click */
+.menu-item.mobile-dropdown.open svg.dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Dropdown options hidden by default */
+.mobile-dropdown-options {
+  display: none;
+  flex-direction: column;
+  padding-left: 0px;
+  padding-top: 10px;
+  border-top: 1px solid #eaeaea;
+  margin-top: 10px;
+  transition: max-height 0.3s ease;
+  overflow: hidden;
+  max-height: 0;
+}
+
+/* Show dropdown options on click */
+.mobile-dropdown-options.open {
+  display: flex;
+  max-height: 500px;
+  /* Set a max height to allow smooth expansion */
+}
+
+.mobile-dropdown-options a {
+  display: flex;
+  align-items: center;
+  padding: 12px 18px;
+  text-decoration: none;
+  color: #1d1d1d;
+  font-size: 16px;
+}
+
+.mobile-dropdown-options a img {
+  width: 22px;
+  height: 15px;
+  margin-right: 12px;
+}
+
+.mobile-dropdown-options a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+/* Customization for other menu items */
+.menu-item {
+  padding: 12px 0;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid #eaeaea;
+  /* Line under Blogs, About Us, and Contact Us */
+  width: 100%;
+  /* Ensures they take up the full width and are in separate lines */
+}
+
+/* Drawer mask and content functionality */
+.drawer-mask,
+.drawer-content-wrapper {
+  pointer-events: auto;
+}
+
+/* Hide hamburger icon and drawer mask by default on larger screens */
+.hamburger-menu,
+.drawer-mask,
+.drawer-content-wrapper {
+  display: none;
+  /* Hidden by default for larger screens */
+}
+
+/* Add this new style to hide the hamburger icon when the menu is open */
+.hamburger-menu.open {
+  display: none;
+}
+
+/* Show hamburger icon only on mobile screens */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+    /* Show the icon only on mobile */
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+
+  .hamburger-icon {
+    font-size: 32px;
+    color: #000;
+    cursor: pointer;
+  }
+
+  /* Hide desktop nav-links on mobile */
+  .nav-links {
+    display: none;
+    /* Hide navigation links on mobile */
+  }
+
+  /* Ensure the logo and nav bar stay visible on mobile */
+  #desktop-nav {
+    display: flex;
+    /* Ensure the navbar container stays visible */
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: hsla(0, 0%, 100%, .8);
+  }
+
+  /* Show the drawer mask and content when open */
+  .drawer-content-wrapper.open,
+  .drawer-mask.open {
+    display: block;
+    /* Visible when drawer is open */
+  }
+
+  .drawer-content-wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100vw;
+    background: white;
+    transition: transform 0.3s ease;
+    transform: translateX(100%);
+    /* Hidden by default */
+    z-index: 1001;
+  }
+
+  .drawer-content-wrapper.open {
+    transform: translateX(0);
+    /* Show drawer when opened */
+  }
+
+  .drawer-mask {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    /* The grey overlay */
+    z-index: 1000;
+    display: none;
+  }
+
+  .drawer-mask.open {
+    display: block;
+    /* Show the mask when the drawer is open */
+  }
+}
+
+
+
+
+
+/* Grid Starts */
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 20px;
+  padding: 0px 100px 32px;
+}
+
+h3 {
+  font-weight: 500;
+}
+
+/* LEFT SECTION */
+
+
+.left-upper {
+  background-color: #fff;
+  margin-top: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  padding: 20px;
+  position: relative;
+  /* Ensure the nav buttons can be positioned inside */
+  box-sizing: border-box;
+}
+
+/* BLOGS SECTION START HERE */
+
+.blogs-content {
+  display: grid;
+  gap: 20px;
+}
+
+/* Main Featured Blog Card */
+.main-blog-card {
+  background-color: #fff;
+  border-radius: 10px;
+  flex-direction: column;
+  align-items: stretch;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+}
+
+.main-blog-image {
+  width: 100%;
+  /* height: 720px; */
+  border-radius: 10px;
+}
+
+
+.main-blog-heading {
+  font-size: 24px;
+  margin-top: 10px;
+}
+
+.main-blog-details {
+  color: #666;
+  margin-top: 5px;
+}
+
+.main-blog-data-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.blog-date,
+.blog-category,
+.blog-read-time {
+  color: #333;
+}
+
+.data-divider {
+  margin: 0 8px;
+  color: #aaa;
+}
+
+/* Smaller Blog Items Grid */
+.smaller-blogs-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.small-blog-card {
+  background-color: #fff;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.small-blog-image {
+  object-fit: cover;
+  width: 100%;
+  height: 230px;
+  border-radius: 10px;
+  object-fit: cover;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+  /* width: auto;
+  height: 230px; */
+}
+
+.small-blog-content {}
+
+.small-blog-heading {
+  font-size: 18px;
+  margin-top: 8px;
+}
+
+/* Small blog data wrap, similar to main blog */
+.small-blog-data-wrap {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.blog-date,
+.blog-category,
+.blog-read-time {
+  color: #333;
+}
+
+.small-blog-data-wrap .data-divider {
+  margin: 0 1px;
+  color: #aaa;
+}
+
+
+
+
+/* RIGHT SECTION */
+.right-section {
+  position: sticky;
+  top: 85px;
+  /* Adjust this to control how far from the top the sticky starts */
+  height: fit-content;
+  /* Ensure the right section takes up its content height */
+  box-sizing: border-box;
+  min-width: 397px;
+}
+
+
+
+.right-upper {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+
+}
+
+
+.featured-heading {
+  margin-bottom: 20px;
+}
+
+.featured-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.featured-blog-item {
+  display: flex;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: box-shadow 0.3s;
+}
+
+
+.blog-link {
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+.blog-image {
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+.blog-content {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.blog-category {
+  font-size: 0.9rem;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.blog-title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.blog-info {
+  font-size: 0.85rem;
+  color: #555;
+  display: flex;
+  gap: 5px;
+}
+
+/* .blog-item:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+} */
+
+
+/* Right lower side section */
+.right-lower {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  border: 1px solid #e5e7eb;
+  margin-top: 20px;
+}
+
+
+
+
+
+
+
+
+
+/* Contact Us */
+
+#contact-us {
+  text-align: center;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  background-color: #00b4d8;
+  color: white;
+  box-sizing: border-box;
+  min-height: fit-content;
+
+}
+
+.contact-us-container {
+  max-width: 1290px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.contact-us-head h2 {
+  font-size: 32px;
+}
+
+.contact-us-head p {
+  padding: 1.5rem;
+  font-size: 20px;
+}
+
+.contact-us-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  margin: 5px;
+}
+
+.contact-us-link {
+  text-decoration: none;
+  /* Remove underline from links */
+}
+
+.contact-us-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 125px;
+  /* Set a fixed width */
+  height: 125px;
+  /* Set a fixed height */
+  flex-shrink: 0;
+  /* Prevent shrinking */
+  transition: transform 0.1s ease-out;
+  /* Faster and smoother scaling */
+  backface-visibility: hidden;
+  /* Prevents shaking and distortion */
+  transform: translateZ(0);
+  /* Fixes blurring and shaking issues */
+}
+
+.contact-us-icon:hover {
+  transform: scale(1.05);
+  /* Enlarge the entire container by 10% on hover */
+}
+
+.contact-us-icon img {
+  width: 100px;
+  /* Set the icon image width */
+  height: 100px;
+  /* Set the icon image height */
+  object-fit: contain;
+  /* Ensure the image fits well without distortion */
+}
+
+.contact-us-icon span {
+  margin-top: 8px;
+  /* Optional: Add some space between the icon and text */
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* FOOTER SECTION */
+
+footer {
+  background-color: rgb(25, 25, 25);
+  color: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+}
+
+.footer-nav p {
+  margin-top: 5rem;
+}
+
+.footer-upper-container {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  max-width: 1320px;
+  align-content: center;
+  align-items: flex-start;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+
+.upper-part {
+  flex: 1;
+  min-width: 200px;
+  /* Ensure a minimum width for each part */
+}
+
+.company {
+  flex-grow: 1.8;
+  padding-right: 60px;
+}
+
+.footer-logo {
+  padding: 2rem 0 2rem 0;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.footer-info {
+  color: #b5b5b5;
+
+}
+
+
+.location-head-footer,
+.company-head-footer,
+.contact-info-head {
+  padding: 2rem 0 2rem 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #adb5bd;
+  /* font-weight:500; */
+  white-space: nowrap;
+}
+
+.location-info-footer,
+.company-info-footer,
+.contact-info-footer {
+
+  /*padding-left: 2%;  Reduced padding for responsiveness */
+  font-size: 18px;
+
+}
+
+footer p {
+  text-align: center;
+}
+
+.location-info-footer li,
+.company-info-footer li {
+  list-style: none;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.location-info-footer li:hover,
+.company-info-footer li:hover,
+.contact-info-footer span:hover {
+  color: #00b4d8;
+  /* Customize the hover color */
+}
+
+.contact-info-footer>* {
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.contact-info-footer span {
+  margin-left: 6px;
+}
+
+.contact-socialmedia {
+  padding-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-socialmedia svg {
+  transition: transform 0.3s ease;
+  /* Smooth transition for the zoom effect */
+}
+
+.contact-socialmedia svg:hover {
+  transform: scale(1.25);
+  /* Zoom in by 20% on hover */
+}
+
+footer p {
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+      display: none;
+  }
+
+}

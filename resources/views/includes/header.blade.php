@@ -93,7 +93,7 @@
         </div>
         <div class="nav-links-container nav-desktop">
           <div class="nav-item">
-            <a class="navitem-dropdown-padding" href="/blogs.html">Blogs</a>
+            <a class="navitem-dropdown-padding" href="/static/blogs">Blogs</a>
           </div>
         </div>
         <div class="nav-links-container">

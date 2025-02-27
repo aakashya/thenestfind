@@ -3,7 +3,7 @@
     <div class="footer-upper-container">
       <div class="upper-part company">
         <div class="footer-logo">
-          <a href="index.html">NEST FIND</a>
+          <a href="/">NEST FIND</a>
           <!-- Anchor tag for the logo -->
         </div>
         <div class="footer-info">
@@ -37,7 +37,7 @@
         <div class="company-head-footer">Company</div>
         <div class="company-info-footer">
           <ul>
-            <li><a href="/aboutus.html">About Us</a></li>
+            <li><a href="/static/aboutus">About Us</a></li>
             <!-- Anchor tags for each company link -->
             <li><a href="#contact-us">Contact Us</a></li>
             <li><a href="/blogs.html">Blogs</a></li>

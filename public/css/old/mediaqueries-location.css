@@ -1,0 +1,295 @@
+@media (max-width:1401px) {
+  .nav-container {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1401px) {
+
+  .city-properties-container {
+    max-width: 1320px;
+    /* Adjust this as needed */
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 1290px;
+  }
+
+  .footer-upper-container {
+    max-width: 1320px;
+  }
+
+}
+
+@media (min-width: 1200px) and (max-width: 1400px) {
+
+  .city-properties-container {
+    max-width: 1140px;
+  }
+
+  .city-title {
+    font-size: 80px !important;
+  }
+
+  .property-facilities-container {
+    max-width: 1180px;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 1110px;
+  }
+
+  .footer-upper-container {
+    max-width: 1140px;
+  }
+
+}
+
+@media (min-width: 993px) and (max-width: 1199px) {
+
+  .city-properties-container {
+    max-width: 960px;
+  }
+
+  .city-title {
+    font-size: 65px !important;
+  }
+
+  .property-facilities-container {
+    max-width: 950px;
+  }
+
+  .facilities-item {
+    width: 20%;
+  }
+
+
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 930px;
+  }
+
+  .footer-upper-container {
+    max-width: 960px;
+  }
+
+  .company {
+    padding-right: 0px !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+  .city-properties-container {
+    max-width: 720px;
+  }
+
+  .c2 {
+    flex: 0 0 calc(50%) !important;
+  }
+
+  .property-facilities-container {
+    max-width: 710px;
+  }
+
+  .facilities-item {
+    width: 20%;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 690px;
+  }
+
+  .footer-upper-container {
+    max-width: 720px;
+  }
+
+  .company {
+    padding-right: 0px !important;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .small-screen-only {
+    display: none;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .logo-name {
+    display: none;
+  }
+
+  .nav-container {
+    padding: 12px 16px;
+  }
+
+  .big-screen-only {
+    display: none;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+
+  .city-properties-container {
+    max-width: 540px;
+  }
+
+  .city-title {
+    font-size: 65px !important;
+  }
+
+  .c2 {
+    flex: 0 0 calc(100%) !important;
+  }
+
+  .property-facilities-container {
+    max-width: 530px;
+  }
+
+  .facilities-item {
+    width: 25%;
+  }
+
+  .contact-us-container,
+  .city-info-container,
+  .image-head-container {
+    max-width: 510px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* #desktop-nav {
+    position: static;
+  } */
+
+
+  .city-image-container {
+    height: 280px;
+
+  }
+
+  .city-title {
+    font-size: 38px !important;
+  }
+
+  .image-head-container {
+    max-width: 320px;
+  }
+
+  .city-properties-container {
+    max-width: 450px;
+  }
+
+  .c2 {
+    flex: 0 0 calc(100%) !important;
+  }
+
+  .facilities-item {
+    width: 25%;
+  }
+
+  .contact-us-container,
+  .city-info-container {
+    max-width: 420px;
+  }
+
+  .footer-upper-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .company {
+    flex-grow: 1;
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+
+  .upper-part:nth-of-type(2) {
+      display: none;
+  }
+
+}
+
+/* .container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl,
+.container-xxl {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 15px);
+  padding-left: var(--bs-gutter-x, 15px);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+
+  .container,
+  .container-sm {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+
+  .container,
+  .container-md,
+  .container-sm {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 1400px) {
+
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl,
+  .container-xxl {
+    max-width: 1320px;
+  }
+} */

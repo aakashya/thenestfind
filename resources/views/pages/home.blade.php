@@ -16,7 +16,7 @@
 @section('content')
 <section id="first">
   <div class="section__pic-container">
-    <img src="assets/home_back.jpg" alt="background pic" />
+    <img src="/assets/home_back.jpg" alt="background pic" />
   </div>
   <div class="section-text-overlay">
     <div class="section-text-conatiner">
@@ -40,7 +40,7 @@
             <div class="search-results">
               <!-- Search item: Aldgate Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Aldgate-Residence.html">
+                <a href="/accommodations/Aldgate-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Aldgate Residence
@@ -54,7 +54,7 @@
               </div>
               <!-- Search item: GoBritanya Brighton Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Brighton-Residence.html">
+                <a href="/accommodations/Brighton-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Brighton Residence
@@ -68,7 +68,7 @@
               </div>
               <!-- Search item: Dublin Residence -->
               <!-- <div class="search-item">
-          <a href="/Accommodations/">
+          <a href="/accommodations/">
           <div class="location-details">
             <div class="location-name">Dublin Residence</div>
             <div class="location-address">6-14 Stephens Street Upper, Dublin D08 CH2H</div>
@@ -78,7 +78,7 @@
 
               <!-- Search item: Citi Edge Place Residence -->
               <div class="search-item">
-                <a href="/Accommodations/City-Edge-Residence.html">
+                <a href="/accommodations/City-Edge-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       Citi Edge
@@ -91,7 +91,7 @@
               </div>
               <!-- Search item: Londonist Drapery Place Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Drapery-Place.html">
+                <a href="/accommodations/Londonist-Drapery-Place">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Drapery Place
@@ -109,7 +109,7 @@
 
               <!-- Search item: GoBritanya Ealing Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Ealing-Residence.html">
+                <a href="/accommodations/Ealing-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Ealing Residence
@@ -123,7 +123,7 @@
               </div>
               <!-- Search item: Edinburgh Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Edinburgh-Residence.html">
+                <a href="/accommodations/Edinburgh-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       Edinburgh Residence
@@ -136,7 +136,7 @@
               </div>
               <!-- Search item: Londonist Finsbury House Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Finsbury-House.html">
+                <a href="/accommodations/Londonist-Finsbury-House.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Finsbury House
@@ -152,7 +152,7 @@
 
               <!-- Search item: GoBritanya Hammersmith Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Hammersmith-Residence.html">
+                <a href="/accommodations/Hammersmith-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Hammersmith Residence
@@ -166,7 +166,7 @@
               </div>
               <!-- Search item: GoBritanya Highbury Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Highbury-Residence.html">
+                <a href="/accommodations/Highbury-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Highbury Residence
@@ -180,7 +180,7 @@
               </div>
               <!-- Search item: GoBritanya Highbury Residence II -->
               <div class="search-item">
-                <a href="/Accommodations/Highbury-Residence-II.html">
+                <a href="/accommodations/Highbury-Residence-II.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Highbury Residence II
@@ -194,7 +194,7 @@
               </div>
               <!-- Search item: Londonist Hawley Crescent -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Hawley-Crescent.html">
+                <a href="/accommodations/Londonist-Hawley-Crescent.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Hawley Crescent
@@ -207,7 +207,7 @@
               </div>
               <!-- Search item: GoBritanya Islington Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Islington-Residence.html">
+                <a href="/accommodations/Islington-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Islington Residence
@@ -221,7 +221,7 @@
               </div>
               <!-- Search item: GoBritanya IQ Aldgate Residence -->
               <div class="search-item">
-                <a href="/Accommodations/IQ-Aldgate-Residence.html">
+                <a href="/accommodations/IQ-Aldgate-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya IQ Aldgate Residence
@@ -235,7 +235,7 @@
               </div>
               <!-- Search item: Londonist IQ Paris Gardens Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-IQ-Paris-Gardens.html">
+                <a href="/accommodations/Londonist-IQ-Paris-Gardens.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist IQ Paris Gardens
@@ -248,7 +248,7 @@
               </div>
               <!-- Search item: GoBritanya King's Cross Residence -->
               <div class="search-item">
-                <a href="/Accommodations/King's-Cross-Residence.html">
+                <a href="/accommodations/King's-Cross-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya King's Cross Residence
@@ -262,7 +262,7 @@
               </div>
               <!-- Search item: GoBritanya Kirby Street Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Kirby-Street-Residence.html">
+                <a href="/accommodations/Kirby-Street-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Kirby Street Residence
@@ -276,7 +276,7 @@
               </div>
               <!-- Search item: GoBritanya Lewisham Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Lewisham-Residence.html">
+                <a href="/accommodations/Lewisham-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Lewisham Residence
@@ -290,7 +290,7 @@
               </div>
               <!-- Search item: Londonist Landale House  -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Landale-House.html">
+                <a href="/accommodations/Londonist-Landale-House.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Landale House
@@ -303,7 +303,7 @@
               </div>
               <!-- Search item: Londonist Lewisham Exchange  -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Lewisham-Exchange.html">
+                <a href="/accommodations/Londonist-Lewisham-Exchange.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Lewisham Exchange
@@ -316,7 +316,7 @@
               </div>
               <!-- Search item: GoBritanya McMillan Residence -->
               <div class="search-item">
-                <a href="/Accommodations/McMillan-Residence.html">
+                <a href="/accommodations/McMillan-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya McMillan Residence
@@ -329,7 +329,7 @@
               </div>
               <!-- Search item: Metchley Hall Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Metchley-Hall-Residence.html">
+                <a href="/accommodations/Metchley-Hall-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       Metchley Hall Residence
@@ -342,7 +342,7 @@
               </div>
               <!-- Search item: Moss Court Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Moss-Court-Residence.html">
+                <a href="/accommodations/Moss-Court-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       Moss Court Residence
@@ -355,7 +355,7 @@
               </div>
               <!-- Search item: Londonist New Cross Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-New-Cross.html">
+                <a href="/accommodations/Londonist-New-Cross.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist New Cross
@@ -368,7 +368,7 @@
               </div>
               <!-- Search item: GoBritanya Old Street Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Old-Street-Residence.html">
+                <a href="/accommodations/Old-Street-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Old Street Residence
@@ -381,7 +381,7 @@
               </div>
               <!-- Search item: GoBritanya Oxley Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Oxley-Residence.html">
+                <a href="/accommodations/Oxley-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       Oxley Residence
@@ -394,7 +394,7 @@
               </div>
               <!-- Search item:GoBritanya Paddington Citi View -->
               <div class="search-item">
-                <a href="/Accommodations/Paddington-Citi-View.html">
+                <a href="/accommodations/Paddington-Citi-View.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Paddington Citi View
@@ -408,7 +408,7 @@
               </div>
               <!-- Search item: GoBritanya Paris Gardens -->
               <div class="search-item">
-                <a href="/Accommodations/Paris-Gardens.html">
+                <a href="/accommodations/Paris-Gardens.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Paris Gardens
@@ -422,7 +422,7 @@
               </div>
               <!-- Search item: GoBritanya Point Campus Dublin -->
               <div class="search-item">
-                <a href="/Accommodations/Point-Campus-Dublin.html">
+                <a href="/accommodations/Point-Campus-Dublin.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Point Campus Dublin
@@ -436,7 +436,7 @@
               </div>
               <!-- Search item: Londonist Paddington Citi View  -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Paddington-Citi-View.html">
+                <a href="/accommodations/Londonist-Paddington-Citi-View.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Paddington Citi View
@@ -449,7 +449,7 @@
               </div>
               <!-- Search item: GoBritanya Shoreditch Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Shoreditch-Residence.html">
+                <a href="/accommodations/Shoreditch-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Shoreditch Residence
@@ -463,7 +463,7 @@
               </div>
               <!-- Search item: GoBritanya South Bank Residence -->
               <div class="search-item">
-                <a href="/Accommodations/South-Bank-Residence.html">
+                <a href="/accommodations/South-Bank-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya South Bank Residence
@@ -477,7 +477,7 @@
               </div>
               <!-- Search item: GoBritanya Spitalfields Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Spitalfields-Residence.html">
+                <a href="/accommodations/Spitalfields-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Spitalfields Residence
@@ -491,7 +491,7 @@
               </div>
               <!-- Search item: GoBritanya Sterling Court (Wembley) -->
               <div class="search-item">
-                <a href="/Accommodations/Sterling-Court.html">
+                <a href="/accommodations/Sterling-Court.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Sterling Court (Wembley)
@@ -505,7 +505,7 @@
               </div>
               <!-- Search item: Londonist Seven Sisters -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Seven-Sisters.html">
+                <a href="/accommodations/Londonist-Seven-Sisters.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist Seven Sisters
@@ -518,7 +518,7 @@
               </div>
               <!-- Search item: Londonist South Bermondsey  -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-South-Bermondsey.html">
+                <a href="/accommodations/Londonist-South-Bermondsey.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist South Bermondsey
@@ -531,7 +531,7 @@
               </div>
               <!-- Search item: Londonist The Therese House -->
               <div class="search-item">
-                <a href="/Accommodations/Londonist-Therese-House.html">
+                <a href="/accommodations/Londonist-Therese-House.html">
                   <div class="location-details">
                     <div class="location-name">
                       Londonist The Therese House
@@ -544,7 +544,7 @@
               </div>
               <!-- Search item: GoBritanya Vega Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Vega-Residence.html">
+                <a href="/accommodations/Vega-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Vega Residence
@@ -557,7 +557,7 @@
               </div>
               <!-- Search item: GoBritanya Westminster Residence -->
               <div class="search-item">
-                <a href="/Accommodations/Westminster-Residence.html">
+                <a href="/accommodations/Westminster-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Westminster Residence
@@ -571,7 +571,7 @@
               </div>
               <!-- Search item: GoBritanya White City Residence -->
               <div class="search-item">
-                <a href="/Accommodations/White-City-Residence.html">
+                <a href="/accommodations/White-City-Residence.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya White City Residence
@@ -585,7 +585,7 @@
               </div>
               <!-- Search item: GoBritanya Your TRIBE Peckham -->
               <div class="search-item">
-                <a href="/Accommodations/Your-TRIBE-Peckham.html">
+                <a href="/accommodations/Your-TRIBE-Peckham.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Your TRIBE Peckham
@@ -599,7 +599,7 @@
               </div>
               <!-- Search item: GoBritanya YourTribe South Bermondsey -->
               <div class="search-item">
-                <a href="/Accommodations/Your-TRIBE-South-Bermondsey.html">
+                <a href="/accommodations/Your-TRIBE-South-Bermondsey.html">
                   <div class="location-details">
                     <div class="location-name">
                       GoBritanya Your TRIBE South Bermondsey
@@ -624,11 +624,11 @@
     <div class="second-details-container">
       <div class="second-inner-containers">
         <div class="icons-items">
-          <h3>25K+</h3>
+          <h3>20K+</h3>
           <p>Beds</p>
         </div>
         <div class="icons-items">
-          <h3>1500+</h3>
+          <h3>1000+</h3>
           <p>Properties</p>
         </div>
         <div class="icons-items">
@@ -707,35 +707,35 @@
 
     <div class="cities-container">
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'london') }}"><img src="assets/Cities/London.webp" alt="London" />
+        <a href="{{ url('/city/london') }}"><img src="assets/Cities/London.webp" alt="London" />
           <span class="city-name">London</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'birmingham') }}"><img src="assets/Cities/Birmingham.webp" alt="Birmingham" />
+        <a href="{{ url('/city/birmingham') }}"><img src="assets/Cities/Birmingham.webp" alt="Birmingham" />
           <span class="city-name">Birmingham</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'manchester') }}"><img src="assets/Cities/Manchester.webp" alt="Manchester" />
+        <a href="{{ url('/city/manchester') }}"><img src="assets/Cities/Manchester.webp" alt="Manchester" />
           <span class="city-name">Manchester</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'leeds') }}"><img src="assets/Cities/leeds.webp" alt="Leeds" />
+        <a href="{{ url('/city/leeds') }}"><img src="assets/Cities/leeds.webp" alt="Leeds" />
           <span class="city-name">Leeds</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'brighton') }}"><img src="assets/Cities/Brighton.webp" alt="Brighton" />
+        <a href="{{ url('/city/brighton') }}"><img src="assets/Cities/Brighton.webp" alt="Brighton" />
           <span class="city-name">Brighton</span></a>
       </div>
       <div class="city" data-country="Ireland">
-        <a href="{{ route('city.show', 'dublin') }}"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
+        <a href="{{ url('/city/dublin') }}"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
           <span class="city-name">Dublin</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'edinburgh') }}"><img src="assets/Cities/Edinburgh.webp" alt="Edinburgh" />
+        <a href="{{ url('/city/edinburgh') }}"><img src="assets/Cities/Edinburgh.webp" alt="Edinburgh" />
           <span class="city-name">Edinburgh</span></a>
       </div>
       <div class="city" data-country="UK">
-        <a href="{{ route('city.show', 'sheffield') }}"><img src="assets/Cities/Sheffield.webp" alt="Sheffield" />
+        <a href="{{ url('/city/sheffield') }}"><img src="assets/Cities/Sheffield.webp" alt="Sheffield" />
           <span class="city-name">Sheffield</span></a>
       </div>
       <div class="city" data-country="UK">
