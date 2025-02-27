@@ -88,6 +88,56 @@
                 <img src="https://publicassets.leverageedu.com/accommodation/fly_ireland.svg" alt="Ireland logo" />
                 <span>Dublin</span>
               </a>
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'new-york']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>New York</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'boston']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Boston</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'washington-dc']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Washington DC</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'chicago']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Chicago</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'austin']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Austin</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'los-angeles']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Los Angeles</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'san-francisco']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>San Francisco</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'san-diego']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>San Diego</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'dallas']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Dallas</span>
+              </a>
+
+              <a class="dropdownitems-link" href="{{ route('city.show', ['city' => 'jersey-city']) }}">
+                <img src="https://publicassets.leverageedu.com/accommodation/fly_usa.svg" alt="USA logo" />
+                <span>Jersey City</span>
+              </a>
+
             </div>
           </div>
         </div>
