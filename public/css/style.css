@@ -888,68 +888,66 @@ a {
 /* our-partner feature */
 #brands {
   height: 180px;
-  padding: 10px;
-  background-color: rgb(249, 250, 251);
+  padding: 0;
+  background-color: white;
   text-align: center;
   overflow: hidden;
+  position: relative;
 }
 
 #brands h2 {
   font-size: 32px;
-  margin-bottom: 3px;
+  margin-bottom: 0;
   font-weight: 600;
 }
 
 .brand-slider {
   display: flex;
+  overflow: hidden;
+  white-space: nowrap;
   width: 100%;
 }
 
-.brand-item {
-  display: inline-block;
-  padding: 10px;
-  background-color: rgb(249, 250, 251);
-  flex: 0 0 auto;
+.brand-track {
+  display: flex;
+  gap: 180px; /* Even more space between logos */
+  width: max-content;
+  animation: scroll 15s linear infinite;
 }
 
-.hidden {
-  visibility: hidden;
+.brand-item {
+  flex: 0 0 auto;
+  padding: 30px; /* More padding around logos */
+  background-color: white;
 }
 
 .brand-item img {
   height: 100px;
   width: 200px;
+  object-fit: contain;
+  display: block;
 }
 
-@keyframes slide {
-  0% {
-    transform: translateX(10%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
+/* Logo Adjustments */
+.brand-item img[src*="sc-logo.png"] {
+  width: 200px;
+  height: 95px;
+  padding: 3px;
 }
 
-.brand-slider {
-  animation: slide 15s linear infinite;
-  justify-content: space-between;
+.brand-item img[src*="junehomes-logo.png"] {
+  width: 120px;
+  height: 90px;
+  padding: 5px;
 }
 
-@media screen and (max-width: 768px) {
-  .brand-slider {
-    animation: slideTwiceMobile 10s linear infinite; 
+/* Smooth Scrolling Animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
   }
-
-  @keyframes slideTwiceMobile {
-    0% {
-      transform: translateX(20%);
-    }
-    50% {
-      transform: translateX(-100%); 
-    }
-    100% {
-      transform: translateX(-200%); 
-    }
+  to {
+    transform: translateX(-50%);
   }
 }
 
