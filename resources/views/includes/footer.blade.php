@@ -14,25 +14,7 @@
           support ensuring a stress-free experience.
         </div>
       </div>
-      <div class="upper-part">
-        <div class="location-head-footer">Locations</div>
-        <div class="location-info-footer">
-          <ul>
-            <li><a href="/london.html">London</a></li>
-            <!-- Anchor tag for each location -->
-            <li>
-              <a href="/birmingham.html">Birmingham</a>
-            </li>
-            <li>
-              <a href="/manchester.html">Manchester</a>
-            </li>
-            <li><a href="/leeds.html">Leeds</a></li>
-            <li><a href="/brighton.html">Brighton</a></li>
-            <li><a href="/edinburgh.html">Edinburgh</a></li>
-            <li><a href="/dublin.html">Dublin</a></li>
-          </ul>
-        </div>
-      </div>
+      
       <div class="upper-part">
         <div class="company-head-footer">Company</div>
         <div class="company-info-footer">
