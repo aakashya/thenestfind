@@ -628,7 +628,7 @@
           <p>Beds</p>
         </div>
         <div class="icons-items">
-          <h3>1k+</h3>
+          <h3>1K+</h3>
           <p>Properties</p>
         </div>
         <div class="icons-items">
