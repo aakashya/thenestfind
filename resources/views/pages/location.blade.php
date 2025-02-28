@@ -19,7 +19,13 @@
 
 <section id="city-head-section">
   <div class="city-image-container">
-    <img src="assets/London-background.jpg" alt="London student residences">
+    @php
+        // Convert city name to lowercase and replace spaces with hyphens
+        $citySlug = strtolower(str_replace(' ', '-', $city));
+        $backgroundImage = asset("assets/background/{$citySlug}.webp");
+    @endphp
+
+    <img src="{{ $backgroundImage }}" alt="{{ $city }} student residences">
   </div>
   <div class="image-head-container">
     <h1 class="city-title">{{ $city }} Accommodations</h1>
