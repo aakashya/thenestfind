@@ -82,7 +82,7 @@
               {{ $accommodation->address }}, {{ $accommodation->city }}
             </p>
             <div class="c16">
-              From <span class="c17">{{ $currencySymbol }}{{ $lowestPrice }}</span> / week
+              From <span class="c17">{{ $currencySymbol }}{{ $lowestPrice }}</span> / month
             </div>
           </a>
         </div>

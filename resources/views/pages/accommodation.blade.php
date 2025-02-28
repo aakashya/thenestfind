@@ -72,7 +72,7 @@
                 })->filter()->min();
             @endphp
             <p class="price">{{ $currencySymbol }}{{ number_format($lowestPrice, 0) }}</p>
-              <p class="price-around">per week</p>
+              <p class="price-around">per month</p>
             </div>
           </div>
         </div>
@@ -125,7 +125,7 @@
             <div class="room-details">
               <div class="rooom-details-upper">
                 <h3>{{ $room->name }}</h3> <!-- Room Name from DB -->
-                <p>From <span class="room-price">{{ $formattedPrice }}</span>/week</p> <!-- Base Price -->
+                <p>From <span class="room-price">{{ $formattedPrice }}</span>/month</p> <!-- Base Price -->
                 <p>Rooms are approximately {{ $room->room_size }} SQM.</p> <!-- Room Size -->
               </div>
               <div class="room-details-lower">
@@ -159,7 +159,7 @@
               </div>
               <div class="room-length-price">
                 <div class="price-value">
-                  <p>{{ $formattedPrice }}/week</p> <!-- Base Price Again -->
+                  <p>{{ $formattedPrice }}/month</p> <!-- Base Price Again -->
                 </div>
                 <button class="book-now-btn">Book Now</button>
               </div>
