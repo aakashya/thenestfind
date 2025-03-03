@@ -18,7 +18,7 @@ class CreateRoomsTable extends Migration
             $table->integer('max_occupancy');
             $table->string('bathroom_type');
             $table->text('description')->nullable();
-            $table->json('prices')->nullable();
+            $table->json('price')->nullable();
             $table->json('amenities')->nullable();
             $table->date('available_at')->nullable();
             $table->json('photos')->nullable();

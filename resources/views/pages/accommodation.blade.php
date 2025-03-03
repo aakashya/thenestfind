@@ -8,7 +8,6 @@
 <link rel="stylesheet" href="{{ asset('css/mediaqueries-accommodation.css') }}?v={{ time() }}">
 @endpush
 
-
 @section('scripts')
 <script src="{{ asset('js/accomodation.js') }}"></script>
 @endsection
@@ -34,9 +33,8 @@
           </div>
           <!-- Navigation Buttons -->
           <div class="carousel-nav">
-            <button class="left-arrow">
-              < </button>
-                <button class="right-arrow"> > </button>
+            <button class="left-arrow"><</button>
+            <button class="right-arrow">></button>
           </div>
           <!-- Image counter -->
           <div class="image-counter">1/8</div>
@@ -66,12 +64,9 @@
                 $currencySymbol = $currencySymbols[$accommodation->country] ?? '£';
 
                 // Get the lowest price from all rooms
-                $lowestPrice = $accommodation->rooms->map(function($room) {
-                    $prices = json_decode($room->prices, true);
-                    return $prices['base_price'] ?? null;
-                })->filter()->min();
-            @endphp
-            <p class="price">{{ $currencySymbol }}{{ number_format($lowestPrice, 0) }}</p>
+                $lowestPrice = $accommodation->rooms->whereNotNull('price')->min('price');
+              @endphp
+              <p class="price">{{ $currencySymbol }}{{ number_format($lowestPrice, 0) }}</p>
               <p class="price-around">per month</p>
             </div>
           </div>
@@ -85,7 +80,6 @@
         </div>
         <div class="property-about-body">
           <p class="description">{{ $accommodation->description }}</p>
-          <!-- <button class="read-more-btn">Show More</button> -->
         </div>
       </div>
 
@@ -96,10 +90,9 @@
         </div>
         @foreach($rooms as $room)
         @php
-        $prices = json_decode($room->prices, true); // Decode JSON price data
-        $basePrice = $prices['base_price'] ?? 'N/A'; // Extract base price
+        $basePrice = $room->price ?? 'N/A'; // Use the new price column
         $formattedPrice = $currencySymbol . number_format($basePrice); // Format price correctly
-        $availableFrom = \Carbon\Carbon::parse($room->available_at)->format('F j, Y'); // Format date
+        $availableFrom = $room->available_at ? \Carbon\Carbon::parse($room->available_at)->format('F j, Y') : 'N/A'; // Format date
         @endphp
         <div class="property-room-items {{ 'room' . $loop->index }}" data-images="{{ json_encode($room->photos) }}">
           <div class="property-room-upper">
@@ -112,9 +105,8 @@
 
               <!-- Navigation Buttons -->
               <div class="photo-nav">
-                <button class="room-left-arrow">
-                  < </button>
-                    <button class="room-right-arrow"> > </button>
+                <button class="room-left-arrow"><</button>
+                <button class="room-right-arrow">></button>
               </div>
 
               <!-- Image Counter -->
@@ -180,79 +172,6 @@
         <div class="property-cta">
           <button class="view-rooms-btn" onclick="location.href='#room-options'">View Rooms</button>
           <button id="enquire-now-btn" class="visit-site-btn">Enquire Now</button>
-        </div>
-      </div>
-
-      <!-- Accordion Section -->
-      <div class="RightSection-module__subSection">
-        <div class="accordion-item">
-          <div class="USPSection-module__accordionHeader" data-target="accordion1">
-            <div class="USPSection-module__accordianItemTitle">
-              <div class="USPSection-module__iconWrapper">
-                {!! config('icons.priceMatch') !!}
-              </div>
-              Price Match Guarantee
-            </div>
-            <div class="chevron">
-              {!! config('icons.chevron') !!}
-            </div>
-          </div>
-          <div class="accordion-content" id="accordion1">
-            If you receive a lower price offer for your preferred accommodation from any other student accommodation.
-            <br><br>
-            Nest Find will match that competing price at the time you book with us.
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="USPSection-module__accordionHeader" data-target="accordion2">
-            <div class="USPSection-module__accordianItemTitle">
-              <div class="USPSection-module__iconWrapper">
-                {!! config('icons.verifiedProperties') !!}
-              </div>
-              Verified Properties
-            </div>
-            <div class="chevron">
-              {!! config('icons.chevron') !!}
-            </div>
-          </div>
-          <div class="accordion-content" id="accordion2">
-            We guarantee that what you see on our website is exactly what you'll get.
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="USPSection-module__accordionHeader" data-target="accordion3">
-            <div class="USPSection-module__accordianItemTitle">
-              <div class="USPSection-module__iconWrapper">
-                {!! config('icons.assistance') !!}
-              </div>
-              24x7 Personal Assistance
-            </div>
-            <div class="chevron">
-              {!! config('icons.chevron') !!}
-            </div>
-          </div>
-          <div class="accordion-content" id="accordion3">
-            For any doubts or queries, a quick call is all it takes - we're here to assist you promptly.
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <div class="USPSection-module__accordionHeader" data-target="accordion4">
-            <div class="USPSection-module__accordianItemTitle">
-              <div class="USPSection-module__iconWrapper">
-                {!! config('icons.trustpilot') !!}
-              </div>
-              Trustpilot 4.6/5
-            </div>
-            <div class="chevron">
-              {!! config('icons.chevron') !!}
-            </div>
-          </div>
-          <div class="accordion-content" id="accordion4">
-            We've earned an excellent rating from over 20+ students for our outstanding services.
-          </div>
         </div>
       </div>
     </div>

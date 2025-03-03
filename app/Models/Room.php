@@ -11,12 +11,12 @@ class Room extends Model
 
     protected $fillable = [
         'id', 'accommodation_id', 'name', 'room_type', 'room_size', 'room_size_unit',
-        'max_occupancy', 'bathroom_type', 'description', 'prices', 'amenities', 
+        'max_occupancy', 'bathroom_type', 'description', 'price', 'amenities', 
         'available_at', 'photos', 'application_url'
     ];
 
     protected $casts = [
-        'prices' => 'array',
+        'price' => 'string', // Store as a string instead of an array
         'amenities' => 'array',
         'photos' => 'array',
     ];

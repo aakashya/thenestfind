@@ -33,30 +33,27 @@ class LocationDisplayController extends Controller
                     $propertyPhotos = [];
                 }
 
-                // Get the last image from the array (if available)
+                // Get the first image from the array (if available)
                 $coverImage = '';
                 if (!empty($propertyPhotos)) {
                     $firstPhoto = reset($propertyPhotos);
-                if (is_array($firstPhoto) && isset($firstPhoto['link'])) {
+                    if (is_array($firstPhoto) && isset($firstPhoto['link'])) {
                         $coverImage = $firstPhoto['link'];
-                } elseif (is_string($firstPhoto)) {
-                         $coverImage = $firstPhoto;
+                    } elseif (is_string($firstPhoto)) {
+                        $coverImage = $firstPhoto;
                     }
                 }
 
-
-                // Extract lowest price from rooms JSON column
-                $basePrices = collect(json_decode($accommodation->rooms, true))->map(function ($room) {
-                    $prices = json_decode($room['prices'], true);
-                    return $prices['base_price'] ?? null;
-                })->filter()->toArray();
-
-                $lowestPrice = !empty($basePrices) ? min($basePrices) : null;
+                // Extract lowest price from rooms
+                $lowestPrice = \App\Models\Room::where('accommodation_id', $accommodation->id)
+                    ->whereNotNull('price')
+                    ->orderBy('price', 'asc')
+                    ->value('price'); // Get the lowest price
 
                 return (object) [
                     'id'              => $accommodation->id,
                     'name'            => $accommodation->name,
-                    'partner'         => $accommodation->partner,
+                    'partner'         => $accommodation->partner ?? null,
                     'address'         => $accommodation->address,
                     'city'            => $accommodation->city,
                     'country'         => $accommodation->country,
@@ -73,13 +70,3 @@ class LocationDisplayController extends Controller
         ]);
     }
 }
-
-
-
-
-
-
-
-
-
-
