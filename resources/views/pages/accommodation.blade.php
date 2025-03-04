@@ -33,8 +33,9 @@
           </div>
           <!-- Navigation Buttons -->
           <div class="carousel-nav">
-            <button class="left-arrow"><</button>
-            <button class="right-arrow">></button>
+            <button class="left-arrow">
+              << /button>
+                <button class="right-arrow">></button>
           </div>
           <!-- Image counter -->
           <div class="image-counter">1/8</div>
@@ -49,22 +50,22 @@
             <div class="pricing">
               <p class="price-around">From</p>
               @php
-                // Define country-to-currency mapping
-                $currencySymbols = [
-                    'United Kingdom' => '£', // UK
-                    'USA' => '$', // USA
-                    'United States' => '$', // Alternative name for the USA
-                    'Canada' => '$', // Canada
-                    'Australia' => 'A$', // Australia
-                    'Europe' => '€', // Europe
-                    'India' => '₹', // India
-                ];
+              // Define country-to-currency mapping
+              $currencySymbols = [
+              'United Kingdom' => '£', // UK
+              'USA' => '$', // USA
+              'United States' => '$', // Alternative name for the USA
+              'Canada' => '$', // Canada
+              'Australia' => 'A$', // Australia
+              'Europe' => '€', // Europe
+              'India' => '₹', // India
+              ];
 
-                // Get the currency symbol based on the country (default to £)
-                $currencySymbol = $currencySymbols[$accommodation->country] ?? '£';
+              // Get the currency symbol based on the country (default to £)
+              $currencySymbol = $currencySymbols[$accommodation->country] ?? '£';
 
-                // Get the lowest price from all rooms
-                $lowestPrice = $accommodation->rooms->whereNotNull('price')->min('price');
+              // Get the lowest price from all rooms
+              $lowestPrice = $accommodation->rooms->whereNotNull('price')->min('price');
               @endphp
               <p class="price">{{ $currencySymbol }}{{ number_format($lowestPrice, 0) }}</p>
               <p class="price-around">per month</p>
@@ -105,8 +106,9 @@
 
               <!-- Navigation Buttons -->
               <div class="photo-nav">
-                <button class="room-left-arrow"><</button>
-                <button class="room-right-arrow">></button>
+                <button class="room-left-arrow">
+                  < </button>
+                    <button class="room-right-arrow">></button>
               </div>
 
               <!-- Image Counter -->
@@ -121,10 +123,18 @@
                 <p>Rooms are approximately {{ $room->room_size }} SQM.</p> <!-- Room Size -->
               </div>
               <div class="room-details-lower">
-                <div class="room-detail-item">Double Bed</div>
-                <div class="room-detail-item">Fully Furnished</div>
-                <div class="room-detail-item">Private Kitchen</div>
-                <div class="room-detail-item">Private Bathroom</div>
+                <div class="room-detail-item">
+                  {{ $room->room_type === 'private' ? 'Private Room' : 'Shared Room' }}
+                </div>
+                <div class="room-detail-item">
+                  {{ $room->fully_furnished ? 'Fully Furnished' : 'Unfurnished' }}
+                </div>
+                <div class="room-detail-item">
+                  {{ $room->private_kitchen ? 'Private Kitchen' : 'Shared Kitchen' }}
+                </div>
+                <div class="room-detail-item">
+                  {{ $room->private_bathroom ? 'Private Bathroom' : 'Shared Bathroom' }}
+                </div>
               </div>
             </div>
           </div>

@@ -12,7 +12,9 @@ class Room extends Model
     protected $fillable = [
         'id', 'accommodation_id', 'name', 'room_type', 'room_size', 'room_size_unit',
         'max_occupancy', 'bathroom_type', 'description', 'price', 'amenities', 
-        'available_at', 'photos', 'application_url'
+        'available_at', 'photos', 'application_url', 'live_in_partner_allowed', 
+        'fully_furnished', 'private_kitchen', 'price_frequency', 'private_bathroom', 
+        'number_of_roommates'
     ];
 
     protected $casts = [
