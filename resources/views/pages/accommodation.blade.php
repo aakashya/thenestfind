@@ -33,9 +33,12 @@
           </div>
           <!-- Navigation Buttons -->
           <div class="carousel-nav">
-            <button class="left-arrow">
-              << /button>
-                <button class="right-arrow">></button>
+            <button class="left-arrow"> 
+              <  
+            </button>
+            <button class="right-arrow">
+              >
+            </button>
           </div>
           <!-- Image counter -->
           <div class="image-counter">1/8</div>
