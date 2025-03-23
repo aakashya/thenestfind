@@ -53,10 +53,11 @@ class LocationDisplayController extends Controller
                 return (object) [
                     'id'              => $accommodation->id,
                     'name'            => $accommodation->name,
-                    'partner'         => $accommodation->partner ?? null,
+                    'provider'         => $accommodation->provider ?? null,
                     'address'         => $accommodation->address,
                     'city'            => $accommodation->city,
                     'country'         => $accommodation->country,
+                    'zip'             => $accommodation->zip,
                     'property_photos' => $propertyPhotos,
                     'cover_image'     => $coverImage,
                     'lowest_price'    => $lowestPrice

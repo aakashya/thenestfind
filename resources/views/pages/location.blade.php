@@ -20,9 +20,9 @@
 <section id="city-head-section">
   <div class="city-image-container">
     @php
-        // Convert city name to lowercase and replace spaces with hyphens
-        $citySlug = strtolower(str_replace(' ', '-', $city));
-        $backgroundImage = asset("assets/background/{$citySlug}.webp");
+    // Convert city name to lowercase and replace spaces with hyphens
+    $citySlug = strtolower(str_replace(' ', '-', $city));
+    $backgroundImage = asset("assets/background/{$citySlug}.webp");
     @endphp
 
     <img src="{{ $backgroundImage }}" alt="{{ $city }} student residences">
@@ -51,10 +51,10 @@
     <div class="c1">
       @foreach($accommodations as $accommodation)
       @php
-        // Determine the currency symbol based on the country
-        $currencySymbol = ($accommodation->country == 'UK') ? '£' : '$';
-        // Ensure lowest price is formatted correctly
-        $lowestPrice = $accommodation->lowest_price ? number_format($accommodation->lowest_price, 0) : 'N/A';
+      // Determine the currency symbol based on the country
+      $currencySymbol = ($accommodation->country == 'UK') ? '£' : '$';
+      // Ensure lowest price is formatted correctly
+      $lowestPrice = $accommodation->lowest_price ? number_format($accommodation->lowest_price, 0) : 'N/A';
       @endphp
 
       <div class="c2">
@@ -67,11 +67,13 @@
                 @endif
               </div>
             </div>
-            <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}" class="c12"></a>
+            <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}"
+              class="c12"></a>
           </div>
-          <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}" class="c13">
+          <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}"
+            class="c13">
             <h4 class="c14">
-              <span>{{ $accommodation->partner }} {{ $accommodation->name }}</span>
+              <span>{{ $accommodation->provider }} {{ $accommodation->zip }}: {{ $accommodation->name }}</span>
             </h4>
             <p class="c15">
               <svg width="14" height="14" fill="#6b7280" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg">

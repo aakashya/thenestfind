@@ -14,12 +14,11 @@ Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
-Route::get('/{city}', [LocationDisplayController::class, 'showCity'])
-    ->where('city', '[a-zA-Z0-9\-_]+')
-    ->name('city.show');
+Route::get('/{city}', [LocationDisplayController::class, 'showCity'])->where('city', '[a-zA-Z0-9\-_]+')->name('city.show');
 
 
 Route::get('/accommodation/{id}', [AccommodationDisplayController::class, 'show'])->name('accommodation.show');
+
 
 
 // Helper function to serve static HTML files

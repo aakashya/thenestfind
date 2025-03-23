@@ -1,6 +1,6 @@
 @extends('layouts.accommodation-layout')
 
-@section('title', $accommodation->name)
+@section('title', $accommodation->provider . ' ' . $accommodation->zip . ': ' . $accommodation->name . ', ' . $accommodation->city)
 
 @push('styles')
 <link rel="stylesheet" href="{{ asset('css/accommodation.css') }}?v={{ time() }}">
@@ -47,7 +47,7 @@
         <div class="property-overview">
           <div class="property-head">
             <div class="property-head-name">
-              <h1>{{ $accommodation->name }}, {{ $accommodation->city }}</h1>
+              <h1>{{ $accommodation->provider }} {{ $accommodation->zip }}: {{ $accommodation->name }}, {{ $accommodation->city }}</h1>
               <p>{{ $accommodation->address }}, {{ $accommodation->city }}, {{ $accommodation->state }}</p>
             </div>
             <div class="pricing">
