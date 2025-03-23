@@ -7,26 +7,28 @@ use Illuminate\Http\Request;
 
 class AccommodationDisplayController extends Controller
 {
-    public function show($id)
-    {
-        $accommodation = Accommodation::with('rooms')->findOrFail($id);
+    public function show($country, $city, $slug)
+{
+    // Extract ID from the end of the slug
+    $parts = explode('-', $slug);
+    $id = array_pop($parts);
 
-        // Ensure JSON decoding for property photos
-        if (is_string($accommodation->property_photos)) {
-            $accommodation->property_photos = json_decode($accommodation->property_photos, true);
-        }
+    $accommodation = Accommodation::with('rooms')->findOrFail($id);
 
-        foreach ($accommodation->rooms as $room) {
-            // Decode photos field
-            if (is_string($room->photos)) {
-                $room->photos = json_decode($room->photos, true);
-            }
-        }
-
-        // Pass the rooms separately to avoid "Undefined variable $rooms" in Blade
-        $rooms = $accommodation->rooms;
-
-        return view('pages.accommodation', compact('accommodation', 'rooms'));
+    // Decode property photos if needed
+    if (is_string($accommodation->property_photos)) {
+        $accommodation->property_photos = json_decode($accommodation->property_photos, true);
     }
+
+    foreach ($accommodation->rooms as $room) {
+        if (is_string($room->photos)) {
+            $room->photos = json_decode($room->photos, true);
+        }
+    }
+
+    $rooms = $accommodation->rooms;
+
+    return view('pages.accommodation', compact('accommodation', 'rooms'));
+}
 }
 

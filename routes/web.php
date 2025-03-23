@@ -8,7 +8,9 @@ use App\Http\Controllers\FormSubmissionController;
 
 require base_path('routes/api.php');
 
-// Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/accommodation/{country}/{city}/{slug}', [AccommodationDisplayController::class, 'show'])->name('accommodation.show');
+
+
 
 Route::get('/', function () {
     return view('pages.home');
@@ -17,7 +19,6 @@ Route::get('/', function () {
 Route::get('/{city}', [LocationDisplayController::class, 'showCity'])->where('city', '[a-zA-Z0-9\-_]+')->name('city.show');
 
 
-Route::get('/accommodation/{id}', [AccommodationDisplayController::class, 'show'])->name('accommodation.show');
 
 
 

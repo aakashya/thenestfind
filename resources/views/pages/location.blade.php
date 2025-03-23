@@ -67,10 +67,10 @@
                 @endif
               </div>
             </div>
-            <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}"
+            <a href="{{ route('accommodation.show', ['country' => Str::slug($accommodation->country),'city' => Str::slug($accommodation->city),'slug' => Str::slug($accommodation->provider) . '-' . Str::slug($accommodation->name) . '-' . $accommodation->id]) }}"
               class="c12"></a>
           </div>
-          <a href="{{ route('accommodation.show', ['id' => $accommodation->id]) }}"
+          <a href="{{ route('accommodation.show', ['country' => Str::slug($accommodation->country),'city' => Str::slug($accommodation->city),'slug' => Str::slug($accommodation->provider) . '-' . Str::slug($accommodation->name) . '-' . $accommodation->id]) }}"
             class="c13">
             <h4 class="c14">
               <span>{{ $accommodation->provider }} {{ $accommodation->zip }}: {{ $accommodation->name }}</span>
