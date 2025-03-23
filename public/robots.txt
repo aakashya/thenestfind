@@ -1,2 +1,16 @@
+# robots.txt file for thenestfind.com
+
+# Allow all search engines to crawl the site
 User-agent: *
-Disallow:
+Disallow: 
+
+# Disallow specific folders if necessary
+Disallow: /admin/
+Disallow: /private/
+
+# Block search engines from indexing certain files
+Disallow: /config.php
+Disallow: /error-log/
+
+# Sitemap location
+Sitemap: https://thenestfind.com/sitemap.xml
