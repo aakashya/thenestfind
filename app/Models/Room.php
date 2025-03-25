@@ -9,6 +9,9 @@ class Room extends Model
 {
     use HasFactory;
 
+    protected $keyType = 'string'; // <-- Make sure it's a string
+    public $incrementing = false; // <-- Disable auto-incrementing
+
     protected $fillable = [
         'id', 'accommodation_id', 'name', 'room_type', 'room_size', 'room_size_unit',
         'max_occupancy', 'bathroom_type', 'description', 'price', 'amenities', 

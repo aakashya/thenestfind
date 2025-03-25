@@ -156,7 +156,7 @@
             </div>
 
             <!-- First Room Length Item -->
-            <div class="room-length-item">
+            <div class="room-length-item" data-room-id="{{ $room->id }}">
               <div class="room-length-duration">
                 <div class="duration-time">
                   <p>Available from {{ $availableFrom }}</p> <!-- Available Date -->
@@ -166,7 +166,7 @@
                 <div class="price-value">
                   <p>{{ $formattedPrice }}/month</p> <!-- Base Price Again -->
                 </div>
-                <button class="book-now-btn">Book Now</button>
+                <button type="button" class="book-now-btn">Book Now</button>
               </div>
             </div>
           </div>

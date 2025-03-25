@@ -377,7 +377,9 @@ document
                 chevronIcon.classList.add("rotate"); // Rotate the chevron
             }
         });
-    });
+});
+
+
 
 document.addEventListener("DOMContentLoaded", function () {
     const nestfindModal = document.getElementById("nestfind-modal");

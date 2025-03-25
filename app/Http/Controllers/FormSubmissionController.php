@@ -25,7 +25,7 @@ class FormSubmissionController extends Controller
 
         // Fetch Accommodation Details
         $accommodation = Accommodation::findOrFail($validated['accommodation_id']);
-        $partner = $accommodation->partner;
+        $provider = $accommodation->provider;
         $accommodationName = $accommodation->name;
 
         // Fetch Room Details (if applicable)
@@ -51,7 +51,7 @@ class FormSubmissionController extends Controller
             'phone_number' => $validated['phone_number'],
             'accommodation_id' => $validated['accommodation_id'],
             'accommodation_name' => $accommodationName,
-            'provider' => $partner,
+            'provider' => $provider,
             'room_name' => $roomName,
             'room_duration' => $roomDuration,
             'room_price' => $roomPrice,
@@ -59,7 +59,7 @@ class FormSubmissionController extends Controller
         ]);
 
         // **Trigger Lead API ONLY if provider is "June Homes"**
-        if ($partner === 'June Homes') {
+        if ($provider === 'June Homes') {
             $this->sendLeadToJuneHomes($formSubmission);
         }
 

@@ -233,7 +233,7 @@
 
         <!-- Hidden Fields for Database Lookup -->
         <input type="hidden" name="accommodation_id" value="{{ $accommodation->id }}">
-        <input type="hidden" name="room_id" id="room-id">
+        <input type="hidden" name="room_id" id="room-id" value="">
         <input type="hidden" name="submission_url" value="{{ url()->current() }}">
 
         <!-- Submit Button -->
