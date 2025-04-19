@@ -22,7 +22,7 @@ class JuneHomeSeeder extends Seeder
             $accommodationsJson = $jsonResponse->json();
             $accommodationsXml = new SimpleXMLElement($xmlResponse->body());
 
-            $providerPrefix = '00050';
+            $providerPrefix = '6000';
             $apiAccommodationIds = collect($accommodationsJson)->pluck('id')->map(fn($id) => $providerPrefix . $id)->toArray();
 
             $existingAccommodationIds = Accommodation::where('provider', 'June Homes')->pluck('id')->toArray();
