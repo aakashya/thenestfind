@@ -13,7 +13,7 @@ class CountryCitySeeder extends Seeder
         $countryCities = [
             "UK" => ["London", "Leeds", "Manchester", "Birmingham", "Brighton", "Edinburgh", "Belfast", "Bristol", "Cardiff", "Coventry", "Exeter", "Glasgow", "Liverpool", "New Castle", "Nottingham", "Sheffield", "Southampton", "York"],
             "IRE" => ["Dublin"],
-            "US" => ["New York", "Los Angeles", "Chicago", "Austin", "Washington DC", "Houston", "Boston", "San Francisco", "Dallas", "Philadelphia", "Miami", "Minneapolis"],
+            "US" => ["New York", "Jersey City", "Los Angeles", "Chicago", "Austin", "Washington DC", "Houston", "Boston", "San Francisco", "Dallas", "Philadelphia", "Miami", "Minneapolis"],
             "AUS" => ["Sydney", "Melbourne", "Brisbane", "Canberra", "Perth", "Gold Coast", "Adelaide"]
         ];
 

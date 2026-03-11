@@ -20,9 +20,24 @@
 <section id="city-head-section">
   <div class="city-image-container">
     @php
-    // Convert city name to lowercase and replace spaces with hyphens
+    // Resolve background image with fallback between "{slug}.webp" and "{slug}-city.webp".
     $citySlug = strtolower(str_replace(' ', '-', $city));
-    $backgroundImage = asset("assets/background/{$citySlug}.webp");
+    $backgroundCandidates = ["{$citySlug}.webp"];
+    if (str_ends_with($citySlug, '-city')) {
+      $backgroundCandidates[] = substr($citySlug, 0, -5) . '.webp';
+    } else {
+      $backgroundCandidates[] = "{$citySlug}-city.webp";
+    }
+
+    $backgroundFile = 'dublin.webp';
+    foreach ($backgroundCandidates as $candidate) {
+      if (file_exists(public_path("assets/background/{$candidate}"))) {
+        $backgroundFile = $candidate;
+        break;
+      }
+    }
+
+    $backgroundImage = asset("assets/background/{$backgroundFile}");
     @endphp
 
     <img src="{{ $backgroundImage }}" alt="{{ $city }} student residences">

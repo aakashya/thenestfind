@@ -10,8 +10,27 @@ class LocationDisplayController extends Controller
 {
     public function showCity($slug)
     {
-        // Find the city where status = 'available'
-        $city = City::where('slug', $slug)->where('status', 'available')->first();
+        $normalizedSlug = strtolower(trim($slug));
+        $candidateSlugs = [$normalizedSlug];
+
+        if (str_ends_with($normalizedSlug, '-city')) {
+            $candidateSlugs[] = substr($normalizedSlug, 0, -5);
+        } else {
+            $candidateSlugs[] = $normalizedSlug . '-city';
+        }
+
+        if (in_array($normalizedSlug, ['jersey', 'new-jersey'], true)) {
+            $candidateSlugs[] = 'jersey-city';
+        }
+
+        if ($normalizedSlug === 'new-york-city') {
+            $candidateSlugs[] = 'new-york';
+        }
+
+        // Find available city by direct slug or known alias slug variants
+        $city = City::whereIn('slug', array_values(array_unique($candidateSlugs)))
+            ->where('status', 'available')
+            ->first();
 
         if (!$city) {
             abort(404, 'City not found');
