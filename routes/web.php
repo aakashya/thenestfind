@@ -6,8 +6,6 @@ use App\Http\Controllers\AccommodationDisplayController;
 use App\Http\Controllers\LocationDisplayController;
 use App\Http\Controllers\FormSubmissionController;
 
-require base_path('routes/api.php');
-
 Route::get('/accommodation/{country}/{city}/{slug}', [AccommodationDisplayController::class, 'show'])->name('accommodation.show');
 
 
@@ -54,7 +52,9 @@ Route::get('/static/{page}', function ($page) {
 })->where('page', '[A-Za-z0-9_-]+');
 
 
-Route::post('/form-submit', [FormSubmissionController::class, 'submit'])->name('form.submit');
+Route::post('/form-submit', [FormSubmissionController::class, 'submit'])
+    ->middleware('throttle:20,1')
+    ->name('form.submit');
 
 
 Route::redirect('/aboutus', '/static/about', 301);

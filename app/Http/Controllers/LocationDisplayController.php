@@ -17,8 +17,13 @@ class LocationDisplayController extends Controller
             abort(404, 'City not found');
         }
 
+        $cityNames = array_values(array_unique(array_filter([
+            $city->city_name,
+            str_ends_with($city->city_name, ' City') ? substr($city->city_name, 0, -5) : ($city->city_name . ' City'),
+        ])));
+
         // Use paginate() to get 6 accommodations per page
-        $accommodations = Accommodation::where('city', $city->city_name)
+        $accommodations = Accommodation::whereIn('city', $cityNames)
             ->paginate(6);
 
         // Transform each accommodation in the paginator

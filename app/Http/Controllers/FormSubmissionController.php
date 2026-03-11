@@ -12,15 +12,31 @@ class FormSubmissionController extends Controller
 {
     public function submit(Request $request)
     {
+        $appUrlHost = parse_url(config('app.url'), PHP_URL_HOST);
+
         // Validate input
         $validated = $request->validate([
             'full_name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'country_code' => 'nullable|string|max:10',
-            'phone_number' => 'required|string|max:20',
-            'accommodation_id' => 'required|string',
-            'room_id' => 'nullable|string', // Allow empty for general enquiries
-            'submission_url' => 'required|string',
+            'country_code' => 'nullable|regex:/^\+?[0-9-]{1,10}$/',
+            'phone_number' => 'required|regex:/^[0-9()+\\-\\s]{6,20}$/',
+            'accommodation_id' => 'required|integer|exists:accommodations,id',
+            'room_id' => 'nullable|string|exists:rooms,id', // Allow empty for general enquiries
+            'submission_url' => [
+                'required',
+                'url',
+                'max:2048',
+                function ($attribute, $value, $fail) use ($appUrlHost) {
+                    if (!$appUrlHost) {
+                        return;
+                    }
+
+                    $submittedHost = parse_url($value, PHP_URL_HOST);
+                    if (!$submittedHost || strcasecmp($submittedHost, $appUrlHost) !== 0) {
+                        $fail('Invalid submission URL.');
+                    }
+                },
+            ],
         ]);
 
         // Fetch Accommodation Details
@@ -34,13 +50,19 @@ class FormSubmissionController extends Controller
         $roomPrice = null;
 
         if (!empty($validated['room_id'])) {
-            $room = Room::find($validated['room_id']);
+            $room = Room::where('id', $validated['room_id'])
+                ->where('accommodation_id', $accommodation->id)
+                ->first();
 
-            if ($room) {
-                $roomName = $room->name;
-                $roomDuration = $room->duration;
-                $roomPrice = $room->base_price;
+            if (!$room) {
+                return redirect()->back()
+                    ->withErrors(['room_id' => 'Invalid room selection.'])
+                    ->withInput();
             }
+
+            $roomName = $room->name;
+            $roomDuration = $room->available_at ? (string) $room->available_at : null;
+            $roomPrice = is_scalar($room->price) ? (string) $room->price : null;
         }
 
         // Store form submission
@@ -49,7 +71,7 @@ class FormSubmissionController extends Controller
             'email' => $validated['email'],
             'country_code' => $validated['country_code'],
             'phone_number' => $validated['phone_number'],
-            'accommodation_id' => $validated['accommodation_id'],
+            'accommodation_id' => (string) $accommodation->id,
             'accommodation_name' => $accommodationName,
             'provider' => $provider,
             'room_name' => $roomName,
@@ -76,6 +98,10 @@ class FormSubmissionController extends Controller
 
         // API Key (Store this securely in .env)
         $apiKey = env('JUNEHOMES_API_KEY');
+        if (empty($apiKey)) {
+            \Log::warning('JuneHomes API key is missing. Lead submission skipped.');
+            return;
+        }
 
         // Prepare payload for JuneHomes API
         $payload = [
@@ -94,16 +120,16 @@ class FormSubmissionController extends Controller
         ];
 
         // Make API request
-        $response = Http::withHeaders([
+        $response = Http::timeout(10)->withHeaders([
             'X-API-KEY' => $apiKey,
             'Content-Type' => 'application/json',
         ])->post($apiUrl, $payload);
 
         // Log response for debugging
         if ($response->failed()) {
-            \Log::error('JuneHomes API Error:', ['response' => $response->json()]);
+            \Log::error('JuneHomes API Error.', ['status' => $response->status()]);
         } else {
-            \Log::info('Lead sent to JuneHomes successfully.', ['response' => $response->json()]);
+            \Log::info('Lead sent to JuneHomes successfully.', ['status' => $response->status()]);
         }
     }
 }

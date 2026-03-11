@@ -6,6 +6,9 @@
 /storage/*.key
 /storage/pail
 /vendor
+.env
+.env.*
+!.env.example
 .env.backup
 .env.production
 .phpactor.json
@@ -20,3 +23,10 @@ yarn-error.log
 /.nova
 /.vscode
 /.zed
+/aa
+/aa.pub
+*.pem
+id_rsa
+id_rsa.pub
+id_ed25519
+id_ed25519.pub

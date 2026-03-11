@@ -10,6 +10,24 @@ use SimpleXMLElement;
 
 class JuneHomeSeeder extends Seeder
 {
+    /**
+     * Map provider/source accommodation ids to a stable numeric id compatible
+     * with accommodations.id (BIGINT UNSIGNED).
+     */
+    private function mapAccommodationId(string|int $originalId, string $providerPrefix = '6000'): int
+    {
+        $id = (string) $originalId;
+
+        if (ctype_digit($id)) {
+            return (int) ($providerPrefix . $id);
+        }
+
+        $providerBase = ((int) $providerPrefix) * 1000000000;
+        $hash = (int) sprintf('%u', crc32($providerPrefix . '|' . $id));
+
+        return $providerBase + $hash;
+    }
+
     public function run()
     {
         $jsonApiUrl = "https://junehomes.com/api/v1/residences/feeds/coliving/viL8GrIUm3wrOFU/";
@@ -23,7 +41,10 @@ class JuneHomeSeeder extends Seeder
             $accommodationsXml = new SimpleXMLElement($xmlResponse->body());
 
             $providerPrefix = '6000';
-            $apiAccommodationIds = collect($accommodationsJson)->pluck('id')->map(fn($id) => $providerPrefix . $id)->toArray();
+            $apiAccommodationIds = collect($accommodationsJson)
+                ->pluck('id')
+                ->map(fn($id) => $this->mapAccommodationId($id, $providerPrefix))
+                ->toArray();
 
             $existingAccommodationIds = Accommodation::where('provider', 'June Homes')->pluck('id')->toArray();
             $accommodationsToDelete = array_diff($existingAccommodationIds, $apiAccommodationIds);
@@ -61,7 +82,7 @@ class JuneHomeSeeder extends Seeder
 
             foreach ($accommodationsJson as $accommodationData) {
                 $originalId = $accommodationData['id'];
-                $customId = $providerPrefix . $originalId;
+                $customId = $this->mapAccommodationId($originalId, $providerPrefix);
 
                 $this->command->info("Processing accommodation: " . $accommodationData['name']);
 

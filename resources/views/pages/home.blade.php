@@ -727,7 +727,7 @@
           <span class="city-name">Brighton</span></a>
       </div>
       <div class="city" data-country="Ireland">
-        <a href="{{ url('/city/dublin') }}"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
+        <a href="{{ route('city.show', 'dublin') }}"><img src="assets/Cities/Dublin.webp" alt="Dublin" />
           <span class="city-name">Dublin</span></a>
       </div>
       <div class="city" data-country="UK">

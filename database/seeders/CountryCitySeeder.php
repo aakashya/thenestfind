@@ -18,22 +18,23 @@ class CountryCitySeeder extends Seeder
         ];
 
         foreach ($countryCities as $code => $cities) {
-            // Insert country
-            $country = Country::firstOrCreate([
+            $country = Country::updateOrCreate([
                 'country_code' => $code,
             ], [
                 'country_name' => $this->getCountryName($code),
-                'image' => "/images/countries/{$code}.png" // Assuming images are stored like UK.png
+                'image' => "/images/countries/{$code}.png",
             ]);
 
-            // Insert cities for this country
             foreach ($cities as $city) {
-                City::firstOrCreate([
-                    'city_name' => $city,
+                $slug = strtolower(str_replace(' ', '-', $city));
+
+                City::updateOrCreate([
                     'slug' => strtolower(str_replace(' ', '-', $city)),
                     'country_id' => $country->id,
-                    'status' => in_array($city, $this->comingSoonCities()) ? 'coming_soon' : 'available',
-                    'image' => "/images/cities/" . strtolower(str_replace(' ', '-', $city)) . ".webp"
+                ], [
+                    'city_name' => $city,
+                    'status' => 'available',
+                    'image' => "/images/cities/{$slug}.webp",
                 ]);
             }
         }
@@ -49,11 +50,5 @@ class CountryCitySeeder extends Seeder
             "AUS" => "Australia"
         ];
         return $countryNames[$code] ?? $code;
-    }
-
-    // Helper function to mark some cities as "coming soon"
-    private function comingSoonCities()
-    {
-        return ["Belfast", "Bristol", "Cardiff", "Coventry", "Exeter", "Glasgow", "Liverpool", "New Castle", "Nottingham", "Southampton", "York", "New York", "Los Angeles", "Chicago", "Austin", "Washington DC", "Houston", "Boston", "San Francisco", "Dallas", "Philadelphia", "Miami", "Minneapolis", "Sydney", "Melbourne", "Brisbane", "Canberra", "Perth", "Gold Coast", "Adelaide"];
     }
 }
